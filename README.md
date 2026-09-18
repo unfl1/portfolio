@@ -16,7 +16,7 @@
 **GitHub**　[CapstoneDesign-timeisgold/Back](https://github.com/CapstoneDesign-timeisgold/Back)
 
 ### <시스템 구조>
-![지키 서비스 아키텍처](C:/Users/SSAFY/Documents/Codex/2026-09-18/new-chat/outputs/assets/jiki-architecture.png)
+![지키 서비스 아키텍처](assets/jiki-architecture.png)
 ### <핵심 기능>
 
 **약속 관리** - 친구 요청부터 약속 생성, 초대 수락·거절, 참여 취소까지 처리. 참여 마감 이후에는 변경을 제한하고, 수락한 참여자만 정산 대상으로 확정.
@@ -57,7 +57,7 @@
 **GitHub**　[TABA-DaJobA/Front](https://github.com/TABA-DaJobA/Front)
 
 ### <시스템 구조>
-![다잡아 서비스 아키텍처](C:/Users/SSAFY/Documents/Codex/2026-09-18/new-chat/outputs/assets/dajoba-architecture.png)
+![다잡아 서비스 아키텍처](assets/dajoba-architecture.png)
 ### <핵심 기능>
 
 **채용공고 탐색** - 크롤링으로 수집한 공고를 서비스 내 목록·상세 페이지로 제공. 직군별 필터와 페이지네이션을 적용하고 메인 화면에 최신 공고 표시.
@@ -106,7 +106,7 @@
 **GitHub**　[unfl1/mylibrary](https://github.com/unfl1/mylibrary)
 
 ### <시스템 구조>
-![나만의 도서관 서비스 및 배포 아키텍처](C:/Users/SSAFY/Documents/Codex/2026-09-18/new-chat/outputs/assets/mylibrary-architecture.png)
+![나만의 도서관 서비스 및 배포 아키텍처](assets/mylibrary-architecture.png)
 ### <핵심 기능>
 
 **도서 게시글** — 이미지·위치·비용·보증금을 포함한 게시글 등록. 목록·상세 조회, 제목 검색, 내 게시글 조회·삭제.

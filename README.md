@@ -69,7 +69,7 @@
 
 로컬 환경에서 MariaDB와 k6를 실행하고, 조건별로 5초간 워밍업한 뒤 10초씩 3회 측정한 결과이므로, 운영 환경에서의 성능을 의미하지는 않는다.
 
-측정 조건: [개선 기록](back/docs/IMPROVEMENT_LOG.md)
+측정 조건: [개선 기록](https://github.com/CapstoneDesign-timeisgold/Back/blob/main/back/docs/IMPROVEMENT_LOG.md)
 
 ### 3. 정산 금액 보존과 동시 정산 처리
 
@@ -97,7 +97,7 @@
 
 동시 정산 실험은 로컬 MariaDB에서 두 요청이 충돌하도록 실행 시점을 맞춰 진행했다. 
 
-실험 조건 및 검증 범위: [정산 검증 문서](back/docs/SETTLEMENT_INTEGRITY.md)
+실험 조건 및 검증 범위: [정산 검증 문서](https://github.com/CapstoneDesign-timeisgold/Back/blob/main/back/docs/SETTLEMENT_INTEGRITY.md)
 
 <br>
 
@@ -216,7 +216,7 @@ MockMvc로 HTTP 응답을 확인하고 H2로 참여 상태와 마감 정보의 �
 | 배포 단위 | 이미지에 구성한 실행 환경 | 구현 근거 |
 | --- | --- | --- |
 | 프론트엔드 | Node.js 환경에서 React를 빌드하고 `serve`로 정적 파일 제공 | [프론트엔드 Dockerfile](https://github.com/unfl1/mylibraryfront/blob/master/Dockerfile) |
-| 백엔드 | 빌드한 JAR을 이미지에 포함하고 Java 17로 실행 | [백엔드 Dockerfile](./Dockerfile) |
+| 백엔드 | 빌드한 JAR을 이미지에 포함하고 Java 17로 실행 | [백엔드 Dockerfile](https://github.com/unfl1/mylibraryback/blob/master/Dockerfile) |
 
 환경 전환 시에는 DB 연결, 외부 API 접근, 이미지 파일 저장 위치를 배포 환경에 맞게 조정했습니다. 로컬 프로세스끼리 연결하던 구성을 컨테이너 실행 위치와 접근 경로에 맞춰 옮겼습니다.
 

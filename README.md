@@ -19,7 +19,7 @@
 
 ## 시스템 구조
 
-![지키 서비스 아키텍처](jiki-architecture.png)
+![지키 서비스 아키텍처](assets/jiki-architecture.png)
 
 ## 핵심 기능
 
@@ -122,7 +122,7 @@ MockMvc로 HTTP 응답을 확인하고 H2로 참여 상태와 마감 정보의 �
 
 ## 시스템 구조
 
-![다잡아 서비스 아키텍처](dajoba-architecture.png)
+![다잡아 서비스 아키텍처](assets/dajoba-architecture.png)
 
 ## 핵심 기능
 

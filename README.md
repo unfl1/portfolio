@@ -99,6 +99,8 @@
 
 실험 조건 및 검증 범위: [정산 검증 문서](back/docs/SETTLEMENT_INTEGRITY.md)
 
+<br>
+
 ## 설계와 검증
 
 ### 첫 참여 수락 이후 마감 시각 변경 제한

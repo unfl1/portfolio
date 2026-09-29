@@ -197,28 +197,40 @@ MockMvc로 HTTP 응답을 확인하고 H2로 참여 상태와 마감 정보의 �
 **기술**　React, Spring Boot, Spring Data JPA, MariaDB, Docker, Docker Compose, Kubernetes, Jenkins, k6, Grafana  
 **GitHub**　[unfl1/mylibrary](https://github.com/unfl1/mylibrary)
 
-### <시스템 구조>
+직접 개발한 도서 대여 서비스를 배포 대상으로 삼아, **Docker 이미지 구성 → Kubernetes 배포 → Jenkins 빌드 자동화**로 이어지는 작업을 진행했습니다. 클라우드 서버에 Jenkins를 설치하고 GitHub Webhook을 연결했으며, 배포된 서비스를 대상으로 k6 부하 테스트와 Grafana 모니터링을 실습했습니다.
+
+<br>
+
+## 시스템 구조
+
 ![나만의 도서관 서비스 및 배포 아키텍처](assets/mylibrary-architecture.png)
-### <핵심 기능>
 
-**도서 게시글** — 이미지·위치·비용·보증금을 포함한 게시글 등록. 목록·상세 조회, 제목 검색, 내 게시글 조회·삭제.
+## 주요 작업
 
-**회원·댓글** — 회원가입·로그인과 게시글 댓글 기능.
+### 1. 애플리케이션을 컨테이너 단위로 배포
 
-### <주요 개발 내용>
+로컬 개발 버전에서 프론트엔드와 백엔드를 별도 저장소로 분리하고, 각각 Dockerfile을 작성해 이미지로 패키징했습니다. 이 이미지를 활용해 Kubernetes 환경에서 서비스를 실행했습니다.
 
-#### 1. 개발 환경부터 서버 배포까지 자동화
+| 배포 단위 | 이미지에 구성한 실행 환경 | 구현 근거 |
+| --- | --- | --- |
+| 프론트엔드 | Node.js 환경에서 React를 빌드하고 `serve`로 정적 파일 제공 | [프론트엔드 Dockerfile](https://github.com/unfl1/mylibraryfront/blob/master/Dockerfile) |
+| 백엔드 | 빌드한 JAR을 이미지에 포함하고 Java 17로 실행 | [백엔드 Dockerfile](./Dockerfile) |
 
-Dockerfile과 Docker Compose로 실행 환경을 구성하고 Kubernetes에 배포. Jenkins CI/CD를 구축해 로컬에서 수정한 코드를 GitHub에 반영하면 실습 서버의 빌드·배포로 이어지도록 자동화.
+환경 전환 시에는 DB 연결, 외부 API 접근, 이미지 파일 저장 위치를 배포 환경에 맞게 조정했습니다. 로컬 프로세스끼리 연결하던 구성을 컨테이너 실행 위치와 접근 경로에 맞춰 옮겼습니다.
 
-#### 2. 부하 상황의 서비스 동작 확인
+### 2. Jenkins CI/CD 구축
 
-k6로 부하를 주고 Grafana에서 테스트 지표 확인. 로그도 함께 살펴보며 요청이 몰릴 때 서비스가 어떻게 동작하는지 확인.
+클라우드 서버에 Jenkins를 설치하고 GitHub Webhook을 연동해 **코드를 push하면 빌드가 자동으로 실행되도록 구성**했습니다. 코드 변경 감지와 빌드 실행을 자동화하고, Jenkins에서 실행 결과를 확인했습니다.
 
-#### 3. 게시글 정보와 이미지의 통합 업로드
+### 3. k6 부하 테스트와 Grafana 모니터링
 
-React 작성 폼에서 텍스트와 이미지를 `FormData`에 담아 전송하고, Spring Boot에서 `MultipartFile`로 받아 파일 시스템에 저장. 이미지 경로를 게시글과 연결해 목록·상세 화면에서 작성자 정보와 함께 표시.
+메인 페이지의 도서 목록 조회를 대상으로 k6 부하 테스트를 진행했습니다. 요청이 증가하는 상황에서 로딩 지연을 관찰했고, 대응 과정에서 Kubernetes의 Pod 수를 늘려 여러 인스턴스가 요청을 처리하도록 조정했습니다.
 
-#### 4. 조회 목적에 따른 API 응답 구성
+이 과정에서 배포 환경의 상태를 대시보드로 확인하는 데 Grafana 활용했습니다. k6로 요청을 발생시키는 작업과 Grafana로 상태를 관찰하는 작업을 함께 다루며, 부하 테스트와 모니터링 도구의 역할을 익혔습니다.
 
-전체 목록·상세·내 게시글 화면에 맞춰 응답 DTO를 분리하고, 제목 검색은 `findByTitleContainingIgnoreCase`로 처리. 상세 조회 시 조회 수를 증가시키고 댓글 기능은 별도의 컨트롤러·서비스·저장소로 구성.
+## 서비스와 저장소
+
+실습 대상인 **나만의 도서관**은 개인 소유 도서의 대여 정보를 공유하는 서비스입니다. React, Spring Boot, MariaDB로 구성했으며, 도서 등록과 검색, 이미지 첨부, 댓글 기능을 제공합니다.
+
+[로컬 개발 버전](https://github.com/unfl1/mylibrary) / [백엔드](https://github.com/unfl1/mylibraryback) / [프론트엔드](https://github.com/unfl1/mylibraryfront)
+

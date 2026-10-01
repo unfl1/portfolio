@@ -156,7 +156,7 @@
 
 #### 전체적인 아키텍처
 
-[![페이지와 직군을 선택하면 서버에서 해당 페이지의 공고를 조회하는 구조](assets/dajoba/01-pagination.png)](assets/dajoba/01-pagination.png)
+[![전체 공고 요청에서 페이지당 20건 요청으로 변경한 전후 비교](assets/dajoba/01-pagination.png)](assets/dajoba/01-pagination.png)
 
 #### 개선 배경
 
@@ -184,7 +184,7 @@
 
 #### 전체적인 아키텍처
 
-[![매칭 결과 데이터 유무에 따라 안내 문구와 스피너 또는 결과 카드를 표시하는 구조](assets/dajoba/02-loading.png)](assets/dajoba/02-loading.png)
+[![대기 안내 문구에 회전 스피너를 추가한 전후 비교](assets/dajoba/02-loading.png)](assets/dajoba/02-loading.png)
 
 #### 개선 배경
 
@@ -209,7 +209,7 @@
 
 #### 전체적인 아키텍처
 
-[![작성 내용을 사용자별 로컬 저장소에 보관하고 선택적으로 복원하며 서버 저장 성공 후 초안을 삭제하는 구조](assets/dajoba/03-draft.png)](assets/dajoba/03-draft.png)
+[![화면 이탈 시 입력 유실에서 자동 저장과 초안 복원으로 개선한 전후 비교](assets/dajoba/03-draft.png)](assets/dajoba/03-draft.png)
 
 #### 개선 배경
 

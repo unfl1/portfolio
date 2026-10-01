@@ -25,31 +25,3 @@ dialog.addEventListener('close', () => {
   image.removeAttribute('src');
   if (previousFocus) previousFocus.focus({ preventScroll: true });
 });
-
-const projectLinks = [...document.querySelectorAll('.project-nav a')];
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    projectLinks.forEach(link => {
-      const active = link.hash === '#' + entry.target.id;
-      link.classList.toggle('active', active);
-      if (active) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
-  });
-}, { rootMargin: '-135px 0px -55% 0px', threshold: 0 });
-document.querySelectorAll('.project-section').forEach(section => observer.observe(section));
-
-// Reveal the target project if a case link is added in the future.
-window.addEventListener('beforeprint', () => {
-  document.querySelectorAll('.case').forEach(detail => {
-    detail.dataset.wasOpen = String(detail.open);
-    detail.open = true;
-  });
-});
-window.addEventListener('afterprint', () => {
-  document.querySelectorAll('.case').forEach(detail => {
-    detail.open = detail.dataset.wasOpen === 'true';
-    delete detail.dataset.wasOpen;
-  });
-});

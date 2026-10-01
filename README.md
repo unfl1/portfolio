@@ -128,6 +128,7 @@
 - [목록 조회 개선 기록](https://github.com/CapstoneDesign-timeisgold/Back/blob/main/back/docs/IMPROVEMENT_LOG.md)
 - [참여 마감 설계와 검증 범위](https://github.com/CapstoneDesign-timeisgold/Back/blob/main/back/docs/PARTICIPATION_DEADLINE.md)
 - [정산 설계와 측정 조건](https://github.com/CapstoneDesign-timeisgold/Back/blob/main/back/docs/SETTLEMENT_INTEGRITY.md)
+- [Nginx 설정과 실행 안내](https://github.com/CapstoneDesign-timeisgold/Back/tree/main/back/deploy/nginx)
 
 <br>
 <br>
@@ -156,7 +157,7 @@
 
 #### 전체적인 아키텍처
 
-[![전체 공고 요청에서 페이지당 20건 요청으로 변경한 전후 비교](assets/dajoba/01-pagination.png)](assets/dajoba/01-pagination.png)
+[![채용공고 페이지네이션 흐름](assets/dajoba/01-pagination.png)](assets/dajoba/01-pagination.png)
 
 #### 개선 배경
 
@@ -184,7 +185,7 @@
 
 #### 전체적인 아키텍처
 
-[![대기 안내 문구에 회전 스피너를 추가한 전후 비교](assets/dajoba/02-loading.png)](assets/dajoba/02-loading.png)
+[![분석 대기 표시 흐름](assets/dajoba/02-loading.png)](assets/dajoba/02-loading.png)
 
 #### 개선 배경
 
@@ -209,7 +210,7 @@
 
 #### 전체적인 아키텍처
 
-[![화면 이탈 시 입력 유실에서 자동 저장과 초안 복원으로 개선한 전후 비교](assets/dajoba/03-draft.png)](assets/dajoba/03-draft.png)
+[![자기소개서 초안 저장과 복원 흐름](assets/dajoba/03-draft.png)](assets/dajoba/03-draft.png)
 
 #### 개선 배경
 
@@ -291,7 +292,7 @@
 
 #### 구성
 
-[![로컬 개발, GitHub, Jenkins, Kubernetes로 이어지는 배포 흐름](assets/mylibrary/delivery-flow.svg)](assets/mylibrary/delivery-flow.svg)
+[![로컬 개발, GitHub, Jenkins, Kubernetes로 이어지는 배포 흐름](assets/mylibrary/delivery-flow.png)](assets/mylibrary/delivery-flow.png)
 
 #### 구축 과정
 
@@ -307,7 +308,7 @@
 
 #### 수행 구성
 
-[![k6, 서버, Grafana를 활용한 부하 테스트와 모니터링](assets/mylibrary/load-monitoring.svg)](assets/mylibrary/load-monitoring.svg)
+[![k6, 서버, Grafana를 활용한 부하 테스트와 모니터링](assets/mylibrary/load-monitoring.png)](assets/mylibrary/load-monitoring.png)
 
 | 도구 | 수행 내용 |
 | --- | --- |

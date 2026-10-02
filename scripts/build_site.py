@@ -2,6 +2,7 @@
 from pathlib import Path
 import html
 import re
+import struct
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -28,7 +29,16 @@ def markdown(value):
             alt, path = image.groups()
             if not (ROOT / path).is_file():
                 raise ValueError(f'Missing image: {path}')
-            out.append(f'<button class="diagram" type="button" data-image="{html.escape(path)}" aria-label="{html.escape(alt)} 크게 보기"><img src="{html.escape(path)}" alt="{html.escape(alt)}" loading="lazy"><span>그림 크게 보기 <span aria-hidden="true">↗</span></span></button>')
+            # Reserve diagram space before lazy loading so anchor targets stay put.
+            dimensions = ''
+            if Path(path).suffix.lower() == '.png':
+                with (ROOT / path).open('rb') as image_file:
+                    header = image_file.read(24)
+                if header[:8] != b'\x89PNG\r\n\x1a\n':
+                    raise ValueError(f'Invalid PNG: {path}')
+                width, height = struct.unpack('>II', header[16:24])
+                dimensions = f' width="{width}" height="{height}"'
+            out.append(f'<button class="diagram" type="button" data-image="{html.escape(path)}" aria-label="{html.escape(alt)} 크게 보기"><img src="{html.escape(path)}" alt="{html.escape(alt)}"{dimensions} loading="lazy"><span>그림 크게 보기 <span aria-hidden="true">↗</span></span></button>')
         elif line.startswith('- '):
             if not listing:
                 out.append('<ul>'); listing = True
@@ -84,7 +94,7 @@ page = '''<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="강현준의 개발 포트폴리오. Jiki 백엔드의 정산 정합성과 성능 개선, 다잡아 프론트엔드의 사용자 경험, 나만의 도서관의 클라우드 배포 기록.">
 <meta name="theme-color" content="#ffffff"><title>강현준 | 개발 포트폴리오</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site.css"><script src="assets/site.js" defer></script></head>
-<body><a class="skip-link" href="#main">본문으로 이동</a><header class="site-header"><a class="brand" href="#top">강현준</a><nav aria-label="프로젝트 바로가기"><a href="#jiki">Jiki</a><a href="#dajoba">다잡아</a><a href="#mylibrary">나만의 도서관</a><a class="github-link" href="https://github.com/unfl1" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></header>
+<body><a class="skip-link" href="#main">본문으로 이동</a><header class="site-header"><div class="scroll-progress" aria-hidden="true"><span></span></div><div class="header-inner"><a class="brand" href="#top">강현준</a><nav aria-label="프로젝트 바로가기"><a href="#jiki">Jiki</a><a href="#dajoba">다잡아</a><a href="#mylibrary">나만의 도서관</a></nav><a class="github-link" href="https://github.com/unfl1" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></header>
 <main id="main" class="wrap"><section class="introduction" id="top"><h1>강현준 개발 포트폴리오</h1></section><div class="project-list">__PROJECTS__</div></main>
 <footer class="site-footer wrap"><span>강현준</span><a href="#top">맨 위로 ↑</a></footer>
 <dialog id="image-dialog" aria-label="구조도 크게 보기"><div class="dialog-toolbar"><span id="image-caption">구조도</span><button id="close-dialog" type="button" aria-label="이미지 닫기">닫기 <span aria-hidden="true">×</span></button></div><div class="dialog-image"><img id="dialog-img" alt=""></div></dialog></body></html>'''

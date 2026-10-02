@@ -25,3 +25,36 @@ dialog.addEventListener('close', () => {
   image.removeAttribute('src');
   if (previousFocus) previousFocus.focus({ preventScroll: true });
 });
+
+// Match the reference portfolio's active tabs and reading progress without dependencies.
+const navLinks = Array.from(document.querySelectorAll('.site-header nav a[href^="#"]'));
+const projects = navLinks.map(link => document.querySelector(link.getAttribute('href')));
+const progressBar = document.querySelector('.scroll-progress span');
+const header = document.querySelector('.site-header');
+let scrollFrame = 0;
+
+function updateNavigation() {
+  scrollFrame = 0;
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  const maxScroll = scrollHeight - clientHeight;
+  const progress = maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 0;
+  progressBar.style.transform = `scaleX(${progress})`;
+  const threshold = header.offsetHeight + window.innerHeight * 0.35;
+  let activeIndex = -1;
+  projects.forEach((project, index) => {
+    if (project && project.getBoundingClientRect().top <= threshold) activeIndex = index;
+  });
+  if (maxScroll > 0 && scrollTop >= maxScroll - 2) activeIndex = projects.length - 1;
+  navLinks.forEach((link, index) => {
+    if (index === activeIndex) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+}
+
+function scheduleNavigation() {
+  if (!scrollFrame) scrollFrame = requestAnimationFrame(updateNavigation);
+}
+window.addEventListener('scroll', scheduleNavigation, { passive: true });
+window.addEventListener('resize', scheduleNavigation);
+new ResizeObserver(scheduleNavigation).observe(document.body);
+updateNavigation();

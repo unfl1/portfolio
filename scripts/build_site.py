@@ -3,6 +3,7 @@ from pathlib import Path
 import html
 import re
 import struct
+import hashlib
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -98,5 +99,10 @@ page = '''<!doctype html>
 <main id="main" class="wrap"><section class="introduction" id="top"><h1>강현준 개발 포트폴리오</h1></section><div class="project-list">__PROJECTS__</div></main>
 <footer class="site-footer wrap"><span>강현준</span><a href="#top">맨 위로 ↑</a></footer>
 <dialog id="image-dialog" aria-label="구조도 크게 보기"><div class="dialog-toolbar"><span id="image-caption">구조도</span><button id="close-dialog" type="button" aria-label="이미지 닫기">닫기 <span aria-hidden="true">×</span></button></div><div class="dialog-image"><img id="dialog-img" alt=""></div></dialog></body></html>'''
-(ROOT / 'index.html').write_text(page.replace('__PROJECTS__', ''.join(projects)), encoding='utf-8')
+page = page.replace('__PROJECTS__', ''.join(projects))
+# A new URL on every asset change prevents previously cached styles/scripts being reused.
+for asset in ('assets/site.css', 'assets/site.js'):
+    version = hashlib.sha256((ROOT / asset).read_bytes()).hexdigest()[:12]
+    page = page.replace(f'"{asset}"', f'"{asset}?v={version}"')
+(ROOT / 'index.html').write_text(page, encoding='utf-8')
 print(f'Built index.html: {len(CONFIG)} projects, {sum(len(re.findall(r"^### ", source, re.M)) for source in sources.values())} cases.')

@@ -7,7 +7,15 @@ import hashlib
 
 ROOT = Path(__file__).resolve().parent.parent
 
+# Website wording is managed separately so README.md remains unchanged.
+WEB_COPY_REPLACEMENTS = {
+    '수락한 약속이 10개일 때 SQL 22회, 50개일 때 102회, 100개일 때 202회 실행되어 목록 크기에 따라 조회가 반복되는 문제 재현.':
+    '수락한 약속이 10개일 때 SQL 22회, 50개일 때 102회, 100개일 때 202회가 실행되어, 약속 수에 따라 조회 횟수가 늘어나는 것을 확인.',
+}
+
 def inline(value):
+    for original, revised in WEB_COPY_REPLACEMENTS.items():
+        value = value.replace(original, revised)
     value = html.escape(value)
     value = re.sub(r'`([^`]+)`', r'<code>\1</code>', value)
     value = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', value)
@@ -61,9 +69,9 @@ def markdown(value):
     return ''.join(out)
 
 CONFIG = [
-    dict(id='jiki', name='Jiki', role='백엔드 개발 · 팀장', repository='https://github.com/CapstoneDesign-timeisgold/Back'),
+    dict(id='jiki', name='Jiki', role='백엔드 개발, 팀장', repository='https://github.com/CapstoneDesign-timeisgold/Back'),
     dict(id='dajoba', name='다잡아', role='프론트엔드 개발', repository='https://github.com/TABA-DaJobA/Front'),
-    dict(id='mylibrary', name='나만의 도서관', role='프론트엔드 · 백엔드 · 배포 환경 구축', repository='https://github.com/unfl1/mylibrary'),
+    dict(id='mylibrary', name='나만의 도서관', role='프론트엔드와 백엔드 개발, 배포 환경 구축', repository='https://github.com/unfl1/mylibrary'),
 ]
 
 readme = (ROOT / 'README.md').read_text(encoding='utf-8')

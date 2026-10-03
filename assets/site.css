@@ -66,7 +66,8 @@ li::marker { color: var(--accent); font-size: .85em; }
 .case > h3 { font-size: clamp(20px, 2vw, 26px); font-weight: 720; color: var(--ink); letter-spacing: -.04em; line-height: 1.45; margin: 0 0 28px; }
 .case-content { display: grid; gap: 16px; }
 .case-block { min-width: 0; padding: 24px 28px; border-radius: 16px; background: var(--surface); }
-.case-block:has(.diagram) { width: min(115%, calc(100vw - 40px)); justify-self: center; padding: 0; background: none; margin-bottom: 8px; }
+.case-block:has(.diagram) { padding: 0; background: none; margin-bottom: 8px; }
+.case-block:has(.diagram) .diagram img { transform: scale(1.09); }
 .case-block h4 { font-size: 17px; font-weight: 750; color: var(--ink); margin: 0 0 14px; }
 .case-block p, .case-block li { color: var(--muted); line-height: 1.8; }
 .case-block li:first-child { margin-top: 0; }
@@ -125,4 +126,5 @@ body:has(dialog[open]) { overflow: hidden; }
   .case-block { break-inside: avoid; }
   .introduction { padding: 0 0 24px; }
   .diagram { padding: 0; border: 0; }
+  .case-block:has(.diagram) .diagram img { transform: none; }
 }

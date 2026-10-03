@@ -48,8 +48,6 @@ def markdown(value):
                 width, height = struct.unpack('>II', header[16:24])
                 dimensions = f' width="{width}" height="{height}"'
             artwork = f'<img src="{html.escape(path)}" alt="{html.escape(alt)}"{dimensions} loading="lazy">'
-            if path == 'assets/dajoba/03-draft.png':
-                artwork = f'<span class="diagram-art">{artwork}<span class="decimal-dot" aria-hidden="true"></span></span>'
             out.append(f'<button class="diagram" type="button" data-image="{html.escape(path)}" aria-label="{html.escape(alt)} 크게 보기">{artwork}<span class="zoom-hint">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>')
         elif line.startswith('- '):
             if not listing:

@@ -57,9 +57,8 @@ h1 { margin: 0; font-size: clamp(32px, 4vw, 52px); font-weight: 750; letter-spac
 .diagram > .zoom-hint { position: absolute; right: 16px; bottom: 10px; font-size: 12px; font-weight: 550; }
 .diagram:hover > .zoom-hint { color: var(--accent-hover); }
 .features { margin-bottom: 48px; }
-ul { margin: 0; padding-left: 20px; }
-li { padding-left: 2px; margin: 9px 0; }
-li::marker { color: var(--accent); font-size: .85em; }
+ul { margin: 0; padding-left: 0; list-style: none; }
+li { margin: 9px 0; }
 .features li, .features p { font-size: 16px; color: var(--muted); }
 .features p { margin: 20px 0 0; }
 .case { padding: 32px 0 24px; border-top: 1px solid var(--line); }
@@ -68,10 +67,6 @@ li::marker { color: var(--accent); font-size: .85em; }
 .case-block { min-width: 0; padding: 24px 28px; border-radius: 16px; background: var(--surface); }
 .case-block:has(.diagram) { padding: 0; background: none; margin-bottom: 8px; }
 .case-block:has(.diagram) .diagram img { transform: scale(1.09); }
-.diagram-art { display: block; position: relative; width: 100%; transform: scale(1.09); }
-.case-block:has(.diagram) .diagram-art img { transform: none; }
-/* Keep the decimal point in the original 2640 × 1140 draft diagram legible when scaled down. */
-.decimal-dot { position: absolute; left: 42.2%; top: 18.77%; width: 3px; height: 3px; border-radius: 50%; background: #191919; transform: translate(-50%, -50%); pointer-events: none; }
 .case-block p { margin: 0; }
 .resources p { margin: 0 0 10px; }
 .case-block h4 { font-size: 17px; font-weight: 750; color: var(--ink); margin: 0 0 14px; }
@@ -133,5 +128,4 @@ body:has(dialog[open]) { overflow: hidden; }
   .introduction { padding: 0 0 24px; }
   .diagram { padding: 0; border: 0; }
   .case-block:has(.diagram) .diagram img { transform: none; }
-  .diagram-art { transform: none; }
 }

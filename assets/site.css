@@ -21,7 +21,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 img { max-width: 100%; display: block; }
 ::selection { background: #dbeafe; color: var(--ink); }
-.wrap { width: min(800px, calc(100% - 40px)); margin-inline: auto; }
+.wrap { width: min(840px, calc(100% - 40px)); margin-inline: auto; }
 .skip-link { position: fixed; top: -100px; left: 16px; padding: 10px 20px; background: var(--ink); color: white; z-index: 100; border-radius: 8px; }
 .skip-link:focus { top: 10px; }
 
@@ -54,8 +54,8 @@ h1 { margin: 0; font-size: clamp(32px, 4vw, 52px); font-weight: 750; letter-spac
 .diagram { position: relative; display: block; width: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: white; padding: 16px 16px 42px; cursor: zoom-in; color: var(--muted); transition: border-color 180ms, box-shadow 180ms; }
 .diagram:hover { border-color: #b4cef3; box-shadow: 0 8px 24px rgb(35 42 52 / 6%); }
 .diagram img { width: 100%; height: auto; }
-.diagram > span { position: absolute; right: 16px; bottom: 10px; font-size: 12px; font-weight: 550; }
-.diagram:hover > span { color: var(--accent-hover); }
+.diagram > .zoom-hint { position: absolute; right: 16px; bottom: 10px; font-size: 12px; font-weight: 550; }
+.diagram:hover > .zoom-hint { color: var(--accent-hover); }
 .features { margin-bottom: 48px; }
 ul { margin: 0; padding-left: 20px; }
 li { padding-left: 2px; margin: 9px 0; }
@@ -68,6 +68,12 @@ li::marker { color: var(--accent); font-size: .85em; }
 .case-block { min-width: 0; padding: 24px 28px; border-radius: 16px; background: var(--surface); }
 .case-block:has(.diagram) { padding: 0; background: none; margin-bottom: 8px; }
 .case-block:has(.diagram) .diagram img { transform: scale(1.09); }
+.diagram-art { display: block; position: relative; width: 100%; transform: scale(1.09); }
+.case-block:has(.diagram) .diagram-art img { transform: none; }
+/* Keep the decimal point in the original 2640 × 1140 draft diagram legible when scaled down. */
+.decimal-dot { position: absolute; left: 42.2%; top: 18.77%; width: 3px; height: 3px; border-radius: 50%; background: #191919; transform: translate(-50%, -50%); pointer-events: none; }
+.case-block p { margin: 0; }
+.resources p { margin: 0 0 10px; }
 .case-block h4 { font-size: 17px; font-weight: 750; color: var(--ink); margin: 0 0 14px; }
 .case-block p, .case-block li { color: var(--muted); line-height: 1.8; }
 .case-block li:first-child { margin-top: 0; }
@@ -111,14 +117,14 @@ body:has(dialog[open]) { overflow: hidden; }
   .project-meta { font-size: 14px; }
   .case-block { padding: 20px; }
   .diagram { padding: 8px 8px 36px; border-radius: 12px; }
-  .diagram > span { right: 12px; bottom: 8px; }
+  .diagram > .zoom-hint { right: 12px; bottom: 8px; }
   .dialog-image { padding: 8px; }
   .dialog-image img { min-width: 850px; }
   .dialog-toolbar { padding: 12px; font-size: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
 @media print {
-  .site-header, .skip-link, .site-footer, .diagram > span, dialog { display: none; }
+  .site-header, .skip-link, .site-footer, .diagram > .zoom-hint, dialog { display: none; }
   .wrap { width: 100%; }
   body { font-size: 12px; }
   .project-section { break-before: page; padding: 0; }
@@ -127,4 +133,5 @@ body:has(dialog[open]) { overflow: hidden; }
   .introduction { padding: 0 0 24px; }
   .diagram { padding: 0; border: 0; }
   .case-block:has(.diagram) .diagram img { transform: none; }
+  .diagram-art { transform: none; }
 }

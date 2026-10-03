@@ -25,8 +25,14 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
       - name: Build portfolio
         run: |
+          npm ci
+          npm run build
           python scripts/build_site.py
           mkdir _site
           cp index.html .nojekyll _site/

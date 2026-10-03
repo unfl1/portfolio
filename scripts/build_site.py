@@ -91,8 +91,9 @@ for item in CONFIG:
         contents = []
         for group in groups:
             label, text = group.groups()
-            label = {'전체적인 아키텍처': '처리 흐름', '구성': '처리 흐름', '수행 구성': '처리 흐름'}.get(label, label)
-            contents.append('<section class="case-block"><h4>' + inline(label) + '</h4>' + markdown(text) + '</section>')
+            is_diagram = bool(re.search(r'!\[[^\]]*\]\([^)]+\)', text))
+            heading = '' if is_diagram else '<h4>' + inline(label) + '</h4>'
+            contents.append('<section class="case-block">' + heading + markdown(text) + '</section>')
         issue_html.append(f'<article class="case"><h3>{inline(number + ". " + title)}</h3><div class="case-content">{"".join(contents)}</div></article>')
     evidence = re.search(r'^## 근거 자료\s*(.*?)(?=^# |\Z)', source, re.M | re.S)
     resources = '<div class="resources"><h3>코드와 설계 기록</h3>' + markdown(evidence.group(1)) + '</div>' if evidence else ''

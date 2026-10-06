@@ -29,7 +29,9 @@ jobs:
         with:
           node-version: '20'
           cache: npm
+          cache-dependency-path: website/package-lock.json
       - name: Build portfolio
+        working-directory: website
         run: |
           npm ci
           npm run build
@@ -37,7 +39,7 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: _site
+          path: website/_site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

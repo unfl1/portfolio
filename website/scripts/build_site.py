@@ -1,6 +1,6 @@
 """Package the independently edited index.html for GitHub Pages.
 
-Edit README.md for the GitHub document and index.html for the website.
+Edit the repository README.md for the GitHub document and website/index.html for the website.
 This script never generates website content from README.md or rewrites index.html.
 It refreshes asset versions only in the deployment copy under _site/.
 """

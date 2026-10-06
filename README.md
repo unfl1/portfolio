@@ -21,7 +21,7 @@
 
 ## 시스템 구조
 
-[![지키 서비스 아키텍처](assets/jiki/jiki-architecture.png)](assets/jiki/jiki-architecture.png)
+[![지키 서비스 아키텍처](website/assets/jiki/jiki-architecture.png)](website/assets/jiki/jiki-architecture.png)
 
 ## 핵심 기능
 
@@ -35,7 +35,7 @@
 
 #### 전체적인 아키텍처
 
-[![참여 변경과 정산이 같은 약속 잠금을 사용하는 구조](assets/jiki/01-participation.png)](assets/jiki/01-participation.png)
+[![참여 변경과 정산이 같은 약속 잠금을 사용하는 구조](website/assets/jiki/01-participation.png)](website/assets/jiki/01-participation.png)
 
 #### 문제
 
@@ -58,7 +58,7 @@
 
 #### 전체적인 아키텍처
 
-[![약속 잠금과 계정 잠금 후 잔액과 거래 기록을 함께 저장하는 구조](assets/jiki/03-settlement.png)](assets/jiki/03-settlement.png)
+[![약속 잠금과 계정 잠금 후 잔액과 거래 기록을 함께 저장하는 구조](website/assets/jiki/03-settlement.png)](website/assets/jiki/03-settlement.png)
 
 #### 문제
 
@@ -85,7 +85,7 @@
 
 #### 전체적인 아키텍처
 
-[![목록 조회에서 반복 SQL을 fetch join으로 줄인 구조](assets/jiki/02-query.png)](assets/jiki/02-query.png)
+[![목록 조회에서 반복 SQL을 fetch join으로 줄인 구조](website/assets/jiki/02-query.png)](website/assets/jiki/02-query.png)
 
 #### 문제
 
@@ -123,7 +123,7 @@
 
 ## 시스템 구조
 
-[![다잡아 서비스 아키텍처](assets/dajoba/dajoba-architecture.png)](assets/dajoba/dajoba-architecture.png)
+[![다잡아 서비스 아키텍처](website/assets/dajoba/dajoba-architecture.png)](website/assets/dajoba/dajoba-architecture.png)
 
 ## 핵심 기능
 
@@ -137,7 +137,7 @@
 
 #### 전체적인 아키텍처
 
-[![채용공고 페이지네이션 흐름](assets/dajoba/01-pagination.png)](assets/dajoba/01-pagination.png)
+[![채용공고 페이지네이션 흐름](website/assets/dajoba/01-pagination.png)](website/assets/dajoba/01-pagination.png)
 
 #### 문제
 
@@ -160,7 +160,7 @@
 
 #### 전체적인 아키텍처
 
-[![자기소개서 초안 저장과 복원 흐름](assets/dajoba/03-draft.png)](assets/dajoba/03-draft.png)
+[![자기소개서 초안 저장과 복원 흐름](website/assets/dajoba/03-draft.png)](website/assets/dajoba/03-draft.png)
 
 #### 문제
 
@@ -186,7 +186,7 @@
 
 #### 전체적인 아키텍처
 
-[![분석 대기 표시 흐름](assets/dajoba/02-loading.png)](assets/dajoba/02-loading.png)
+[![분석 대기 표시 흐름](website/assets/dajoba/02-loading.png)](website/assets/dajoba/02-loading.png)
 
 #### 문제
 
@@ -211,7 +211,7 @@
 
 ## 시스템 구조
 
-[![GitHub와 Jenkins, Kubernetes 컨테이너 배포 환경, k6와 Grafana를 연결한 전체 시스템 구조](assets/mylibrary/system-overview.png)](assets/mylibrary/system-overview.png)
+[![GitHub와 Jenkins, Kubernetes 컨테이너 배포 환경, k6와 Grafana를 연결한 전체 시스템 구조](website/assets/mylibrary/system-overview.png)](website/assets/mylibrary/system-overview.png)
 
 ## 핵심 기능
 
@@ -225,7 +225,7 @@
 
 #### 전체적인 아키텍처
 
-[![React, Spring Boot, MariaDB의 Docker 컨테이너를 Kubernetes로 관리하는 구조](assets/mylibrary/service-containers.png)](assets/mylibrary/service-containers.png)
+[![React, Spring Boot, MariaDB의 Docker 컨테이너를 Kubernetes로 관리하는 구조](website/assets/mylibrary/service-containers.png)](website/assets/mylibrary/service-containers.png)
 
 #### 구축 과정
 
@@ -242,7 +242,7 @@
 
 #### 전체적인 아키텍처
 
-[![로컬 개발, GitHub, Jenkins, Kubernetes로 이어지는 배포 흐름](assets/mylibrary/delivery-flow.png)](assets/mylibrary/delivery-flow.png)
+[![로컬 개발, GitHub, Jenkins, Kubernetes로 이어지는 배포 흐름](website/assets/mylibrary/delivery-flow.png)](website/assets/mylibrary/delivery-flow.png)
 
 #### 구축 과정
 
@@ -257,7 +257,7 @@
 
 #### 전체적인 아키텍처
 
-[![k6, 서버, Grafana를 활용한 부하 테스트와 모니터링](assets/mylibrary/load-monitoring.png)](assets/mylibrary/load-monitoring.png)
+[![k6, 서버, Grafana를 활용한 부하 테스트와 모니터링](website/assets/mylibrary/load-monitoring.png)](website/assets/mylibrary/load-monitoring.png)
 
 #### 수행 과정
 

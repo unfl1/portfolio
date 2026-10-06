@@ -34,9 +34,6 @@ jobs:
           npm ci
           npm run build
           python scripts/build_site.py
-          mkdir _site
-          cp index.html .nojekyll _site/
-          cp -R assets _site/assets
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

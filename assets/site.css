@@ -71,6 +71,8 @@ li { margin: 9px 0; }
 .resources p { margin: 0 0 10px; }
 .case-block h4 { font-size: 17px; font-weight: 750; color: var(--ink); margin: 0 0 14px; }
 .case-block p, .case-block li { color: var(--muted); line-height: 1.8; }
+.case-block ul { list-style: disc; padding-left: 1.25em; }
+.case-block li::marker { color: var(--muted); font-size: .8em; }
 .case-block li:first-child { margin-top: 0; }
 .case-block li:last-child { margin-bottom: 0; }
 .case-block:has(.diagram) h4 { color: var(--label); font-size: 15px; font-weight: 600; }

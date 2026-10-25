@@ -12,93 +12,91 @@
     <script src="assets/site.js?v=04e87ad72b04" defer></script>
   </head>
   <body class="m-0 bg-white text-body font-sans text-[16px] leading-[1.75] tracking-[-.02em] break-keep [overflow-wrap:anywhere] selection:bg-[#dbeafe] selection:text-ink has-[dialog[open]]:overflow-hidden motion-reduce:[&_*]:transition-none motion-reduce:[&_*::before]:transition-none motion-reduce:[&_*::after]:transition-none print:text-[12px]">
-    <a class="skip-link focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] fixed -top-[100px] left-4 px-5 py-2.5 bg-ink text-white z-[100] rounded-lg focus:top-2.5 print:hidden" href="#main">본문으로 이동</a>
-    <header class="site-header sticky top-0 z-20 h-14 bg-white/88 backdrop-blur-[12px] border-b border-line print:hidden">
-      <div class="scroll-progress absolute inset-x-0 top-0 h-[3px] pointer-events-none" aria-hidden="true">
-        <span class="block h-full bg-[linear-gradient(90deg,#7cc4ff,#3182f6,#1b64da)] [transform:scaleX(0)] origin-left"></span>
-      </div>
-      <div class="header-inner w-[min(1120px,calc(100%_-_40px))] h-full mx-auto grid grid-cols-[1fr_minmax(0,540px)_1fr] items-center gap-6 compact:grid-cols-[auto_minmax(0,1fr)] compact:gap-5 compact:w-[calc(100%_-_40px)] small:gap-3">
-        <a class="brand focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] hover:underline hover:underline-offset-4 justify-self-start text-ink text-[18px] font-[750] whitespace-nowrap compact:text-[16px] small:text-[15px]" href="#top">강현준</a>
+    <a class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] fixed -top-[100px] left-4 px-5 py-2.5 bg-ink text-white z-[100] rounded-lg focus:top-2.5 print:hidden" href="#main">본문으로 이동</a>
+    <header id="site-header" class="sticky top-0 z-20 h-14 bg-white/88 backdrop-blur-[12px] border-b border-line print:hidden">
+      <progress id="scroll-progress" value="0" max="1" aria-hidden="true" class="absolute inset-x-0 top-0 block h-[3px] w-full appearance-none border-0 bg-transparent text-accent pointer-events-none [&::-webkit-progress-bar]:bg-transparent [&::-webkit-progress-value]:bg-[linear-gradient(90deg,#7cc4ff,#3182f6,#1b64da)] [&::-moz-progress-bar]:bg-[linear-gradient(90deg,#7cc4ff,#3182f6,#1b64da)]"></progress>
+      <div class="w-[min(1120px,calc(100%_-_40px))] h-full mx-auto grid grid-cols-[1fr_minmax(0,540px)_1fr] items-center gap-6 compact:grid-cols-[auto_minmax(0,1fr)] compact:gap-5 compact:w-[calc(100%_-_40px)] small:gap-3">
+        <a class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] hover:underline hover:underline-offset-4 justify-self-start text-ink text-[18px] font-[750] whitespace-nowrap compact:text-[16px] small:text-[15px]" href="#top">강현준</a>
         <nav aria-label="프로젝트 바로가기" class="grid grid-cols-3 h-full min-w-0 small:grid-cols-[1.4fr_.7fr_.8fr]">
           <a href="#poketact" class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] relative flex items-center justify-center my-[7px] rounded-lg text-label text-[15px] font-[550] whitespace-nowrap no-underline hover:bg-surface hover:text-ink aria-[current=location]:text-ink aria-[current=location]:font-bold after:content-[''] after:absolute after:-bottom-[7px] after:w-8 after:h-0.5 after:rounded-sm after:bg-accent after:opacity-0 after:transition-opacity after:duration-[180ms] aria-[current=location]:after:opacity-100 compact:text-[14px] small:text-[12px]">PokeTact</a><a href="#jiki" class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] relative flex items-center justify-center my-[7px] rounded-lg text-label text-[15px] font-[550] whitespace-nowrap no-underline hover:bg-surface hover:text-ink aria-[current=location]:text-ink aria-[current=location]:font-bold after:content-[''] after:absolute after:-bottom-[7px] after:w-8 after:h-0.5 after:rounded-sm after:bg-accent after:opacity-0 after:transition-opacity after:duration-[180ms] aria-[current=location]:after:opacity-100 compact:text-[14px] small:text-[12px]">Jiki</a><a href="#dajoba" class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] relative flex items-center justify-center my-[7px] rounded-lg text-label text-[15px] font-[550] whitespace-nowrap no-underline hover:bg-surface hover:text-ink aria-[current=location]:text-ink aria-[current=location]:font-bold after:content-[''] after:absolute after:-bottom-[7px] after:w-8 after:h-0.5 after:rounded-sm after:bg-accent after:opacity-0 after:transition-opacity after:duration-[180ms] aria-[current=location]:after:opacity-100 compact:text-[14px] small:text-[12px]">다잡아</a>
         </nav>
-        <a class="github-link focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] justify-self-end px-[13px] py-1.5 rounded-lg bg-accent text-white text-[14px] font-[650] whitespace-nowrap hover:bg-accent-hover hover:no-underline compact:hidden" href="https://github.com/unfl1" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] justify-self-end px-[13px] py-1.5 rounded-lg bg-accent text-white text-[14px] font-[650] whitespace-nowrap hover:bg-accent-hover hover:no-underline compact:hidden" href="https://github.com/unfl1" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
     </header>
-    <main id="main" class="wrap w-[min(840px,calc(100%_-_40px))] mx-auto print:w-full">
-      <section class="introduction py-[clamp(40px,6vw,64px)] print:pt-0 print:pb-6" id="top">
+    <main id="main" class="w-[min(840px,calc(100%_-_40px))] mx-auto print:w-full">
+      <section class="py-[clamp(40px,6vw,64px)] print:pt-0 print:pb-6" id="top">
         <h1 class="m-0 text-[clamp(32px,4vw,52px)] font-[750] tracking-[-.055em] leading-[1.25] text-ink">강현준 개발 포트폴리오</h1>
       </section>
-      <div class="project-list">
-<section class="project-section pt-[clamp(40px,6vw,64px)] pb-[clamp(64px,8vw,96px)] border-t border-line print:break-before-page print:p-0 print:first:break-before-auto" id="poketact" aria-labelledby="poketact-title">
-<div class="project-heading">
+      <div>
+<section class="pt-[clamp(40px,6vw,64px)] pb-[clamp(64px,8vw,96px)] border-t border-line print:break-before-page print:p-0 print:first:break-before-auto" id="poketact" aria-labelledby="poketact-title">
+<div>
 <h2 id="poketact-title" class="mb-6 text-accent text-[clamp(30px,3vw,40px)] leading-[1.3] font-[750] tracking-[-.055em]">PokeTact</h2>
-<p class="project-description mb-6 px-7 py-6 rounded-2xl bg-surface text-[17px] font-[550] text-muted leading-[1.7] small:p-5 small:text-[16px]">문서 근거와 전투 계산을 연결한 포켓몬 전략 챗봇 운영 중</p>
-<dl class="project-meta mb-10 text-[15px] small:text-[14px]">
+<p class="mb-6 px-7 py-6 rounded-2xl bg-surface text-[17px] font-[550] text-muted leading-[1.7] small:p-5 small:text-[16px]">문서 근거와 전투 계산을 연결한 포켓몬 전략 챗봇 운영 중</p>
+<dl class="mb-10 text-[15px] small:text-[14px]">
 <div class="grid grid-cols-[80px_minmax(0,1fr)] gap-4 my-3 small:grid-cols-[65px_minmax(0,1fr)] small:gap-3"><dt class="text-label font-[550]">담당 역할</dt><dd class="m-0">프론트엔드, 백엔드, RAG, 인프라 구성과 운영</dd></div>
 <div class="grid grid-cols-[80px_minmax(0,1fr)] gap-4 my-3 small:grid-cols-[65px_minmax(0,1fr)] small:gap-3"><dt class="text-label font-[550]">기술</dt><dd class="m-0">React, TypeScript, FastAPI, LangGraph, PostgreSQL(pgvector), Docker, AWS</dd></div>
 <div class="grid grid-cols-[80px_minmax(0,1fr)] gap-4 my-3 small:grid-cols-[65px_minmax(0,1fr)] small:gap-3"><dt class="text-label font-[550]">서비스</dt><dd class="m-0"><a href="https://www.chikorita.xyz/" target="_blank" rel="noopener noreferrer" class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] text-accent-hover no-underline hover:underline hover:underline-offset-4 inline-flex min-h-7 items-center font-[650]">PokeTact 바로가기 ↗</a></dd></div>
 <div class="grid grid-cols-[80px_minmax(0,1fr)] gap-4 my-3 small:grid-cols-[65px_minmax(0,1fr)] small:gap-3"><dt class="text-label font-[550]">저장소</dt><dd class="m-0"><a href="https://github.com/unfl1/poketact" target="_blank" rel="noopener noreferrer" class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] text-accent-hover no-underline hover:underline hover:underline-offset-4 inline-flex min-h-7 items-center font-[650]">GitHub ↗</a></dd></div>
 </dl>
 </div>
-<div class="project-body">
-<section class="architecture mb-10"><h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">시스템 구조</h3>
-<button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/system-architecture.png?v=11a918e1435b" aria-label="CloudFront와 S3, Lightsail의 FastAPI와 PostgreSQL, RAG, 자동 배포 및 Grafana 운영 관측 구조 크게 보기"><img src="assets/poketact/system-architecture.png?v=11a918e1435b" alt="CloudFront와 S3, Lightsail의 FastAPI와 PostgreSQL, RAG, 자동 배포 및 Grafana 운영 관측 구조" width="3520" height="2400" loading="lazy" class="max-w-full block w-full h-auto"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
-<section class="features mb-12"><h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">핵심 기능</h3><ul class="m-0 pl-0 list-none">
+<div>
+<section class="mb-10"><h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">시스템 구조</h3>
+<button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/system-architecture.png?v=11a918e1435b" aria-label="CloudFront와 S3, Lightsail의 FastAPI와 PostgreSQL, RAG, 자동 배포 및 Grafana 운영 관측 구조 크게 보기"><img src="assets/poketact/system-architecture.png?v=11a918e1435b" alt="CloudFront와 S3, Lightsail의 FastAPI와 PostgreSQL, RAG, 자동 배포 및 Grafana 운영 관측 구조" width="3520" height="2400" loading="lazy" class="max-w-full block w-full h-auto"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
+<section class="mb-12"><h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">핵심 기능</h3><ul class="m-0 pl-0 list-none">
 <li class="my-[9px] text-[16px] text-muted">근거 기반 챗봇 - 포켓몬 전략 질문, 대화별 전투 상태와 기록 복원, 실제 인용 자료 확인</li>
 <li class="my-[9px] text-[16px] text-muted">도감과 자연어 탐색 - 총 1,351개 항목의 타입, 종족값, 특성, 기술 조회와 조건 검색</li>
 <li class="my-[9px] text-[16px] text-muted">전투 시나리오 - 양쪽 팀 구성, 6대6의 3마리 선출 20개 조합 비교, 일반 타입 기반 공격, 교체 분석과 제한 조건의 참조 데미지 계산</li>
 </ul></section>
-<section class="cases"><h3 class="cases-heading text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">문제 해결과 실서비스 운영</h3>
-<article class="case pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">1. 검색 근거와 인용 검증으로 답변의 출처 추적</h3><div class="case-content grid gap-4">
-<section class="case-block min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2"><button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/01-evidence-handdrawn.png?v=90c4fd9fb000" aria-label="근거를 찾고 검증한 뒤 답변을 표시하는 흐름 크게 보기"><img src="assets/poketact/01-evidence-handdrawn.png?v=90c4fd9fb000" alt="근거를 찾고 검증한 뒤 답변을 표시하는 흐름" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
-<section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4><ul class="m-0 list-disc pl-[1.25em]">
+<section><h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">문제 해결과 실서비스 운영</h3>
+<article class="pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">1. 검색 근거와 인용 검증으로 답변의 출처 추적</h3><div class="grid gap-4">
+<section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2"><button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/01-evidence-handdrawn.png?v=90c4fd9fb000" aria-label="근거를 찾고 검증한 뒤 답변을 표시하는 흐름 크게 보기"><img src="assets/poketact/01-evidence-handdrawn.png?v=90c4fd9fb000" alt="근거를 찾고 검증한 뒤 답변을 표시하는 흐름" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
+<section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4><ul class="m-0 list-disc pl-[1.25em]">
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">유사도 검색만으로는 선택한 포켓몬의 기본 정보가 빠지거나 다른 게임 범위의 문서와 중복 청크가 답변에 섞일 가능성</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">모델이 만든 출처 번호를 그대로 표시하면 실제 검색 자료에 없는 인용이나 원문에 없는 게임 버전을 연결할 가능성</li>
 </ul></section>
-<section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4><ul class="m-0 list-disc pl-[1.25em]">
+<section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4><ul class="m-0 list-disc pl-[1.25em]">
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">포켓몬 메타와 문서 청크를 pgvector의 두 논리 컬렉션으로 분리. 선택한 메타를 먼저 포함하고 적용 범위와 활성 색인 버전을 확인해 문서 검색</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동일 근거를 제거하고 유사도 검색과 MMR 중 선택하도록 구현해 관련도와 근거 다양성을 조정</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">LangGraph의 검색, 생성 흐름에서 주장별 근거 ID와 원문 버전을 서버가 대조하고, 실제 인용한 자료만 화면에 표시</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">잘못된 인용은 한 번 교정을 요청하고 실패하면 유보. 사실, 가정, 미확인 정보를 나누어 저장</li>
 </ul></section>
-<section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4><ul class="m-0 list-disc pl-[1.25em]">
+<section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4><ul class="m-0 list-disc pl-[1.25em]">
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">기본 1,025종과 별도 폼 326개로 총 1,351개 도감 항목 구성. 질문에서 사용한 근거는 원문 링크로 확인</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">검색 범위 필터, 중복 제거, 허위 인용 거부, 교정 실패 후 유보, MMR 적용 시 선택 메타 보존을 회귀 테스트로 검증</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">인용 ID의 유효성 검사와 답변 내용의 정확성 검증을 구분. 현행 게임 적격성과 미검증 전투 정보는 확정하지 않도록 처리</li>
 </ul></section>
 </div></article>
-<article class="case pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">2. 반복 수집과 불필요한 생성 제거로 응답 지연 개선</h3><div class="case-content grid gap-4">
-<section class="case-block min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2"><button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/02-latency-handdrawn.png?v=15c0537a40c7" aria-label="질문 유형에 따라 준비된 근거와 새 자료 수집을 나누는 흐름 크게 보기"><img src="assets/poketact/02-latency-handdrawn.png?v=15c0537a40c7" alt="질문 유형에 따라 준비된 근거와 새 자료 수집을 나누는 흐름" width="1909" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
-<section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4><ul class="m-0 list-disc pl-[1.25em]">
+<article class="pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">2. 반복 수집과 불필요한 생성 제거로 응답 지연 개선</h3><div class="grid gap-4">
+<section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2"><button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/02-latency-handdrawn.png?v=15c0537a40c7" aria-label="질문 유형에 따라 준비된 근거와 새 자료 수집을 나누는 흐름 크게 보기"><img src="assets/poketact/02-latency-handdrawn.png?v=15c0537a40c7" alt="질문 유형에 따라 준비된 근거와 새 자료 수집을 나누는 흐름" width="1909" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
+<section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4><ul class="m-0 list-disc pl-[1.25em]">
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">자료가 준비된 간단한 대면 질문에서도 검색어 생성, 후보 선별, 외부 수집을 반복해 응답 지연 발생</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">선출 계산에서는 최종 답변에 사용하지 않는 모델 문장을 생성한 뒤 버리는 처리 확인</li>
 </ul></section>
-<section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4><ul class="m-0 list-disc pl-[1.25em]">
+<section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4><ul class="m-0 list-disc pl-[1.25em]">
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">계산 자료가 준비된 단순 대면은 기존 RAG 색인을 검색. 일반 전략, 최신 자료, 명시적 조사 요청은 외부 수집 경로 유지</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">선출 결과는 근거 검색 후 계산한 내용의 인용을 직접 검증하고 화면에 표시해 불필요한 생성 호출 제거</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">모든 호출의 추론 수준을 낮춘 실험에서 선봉 역할 혼동을 확인해 상태 추출은 medium으로 유지하고 나머지 호출만 조정</li>
 </ul></section>
-<section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4><ul class="m-0 list-disc pl-[1.25em]">
+<section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4><ul class="m-0 list-disc pl-[1.25em]">
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">로컬의 같은 3개 합성 대화 동시 검증에서 응답 시간 중앙값 62.8초 → 20.4초로 약 67.5% 감소</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">단독 측정에서 대면 46.96초 → 15.26초, 선출 18.81초 → 10.61초로 감소</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">최종 실제 모델 질문 17건에서 선봉, 대화 상태, 타입 계산, 선출 후보 일치를 재확인하고, 단순 대면의 외부 수집 생략과 조사 요청의 수집 유지를 회귀 테스트로 검증</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">준비 자료와 검색 캐시를 사용한 당시 로컬 측정값으로, 전체 질문이나 운영 트래픽의 응답 시간을 보장하지는 않음</li>
 </ul></section>
 </div></article>
-<article class="case pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">3. 동시 요청과 재시도에 대한 모델 사용량 제한</h3><div class="case-content grid gap-4">
-<section class="case-block min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2"><button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/03-budget-handdrawn.png?v=00098ab3e6dd" aria-label="요청 접수와 모델 호출 전 예약으로 사용량을 제한하는 흐름 크게 보기"><img src="assets/poketact/03-budget-handdrawn.png?v=00098ab3e6dd" alt="요청 접수와 모델 호출 전 예약으로 사용량을 제한하는 흐름" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
-<section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4><ul class="m-0 list-disc pl-[1.25em]">
+<article class="pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">3. 동시 요청과 재시도에 대한 모델 사용량 제한</h3><div class="grid gap-4">
+<section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2"><button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/03-budget-handdrawn.png?v=00098ab3e6dd" aria-label="요청 접수와 모델 호출 전 예약으로 사용량을 제한하는 흐름 크게 보기"><img src="assets/poketact/03-budget-handdrawn.png?v=00098ab3e6dd" alt="요청 접수와 모델 호출 전 예약으로 사용량을 제한하는 흐름" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
+<section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4><ul class="m-0 list-disc pl-[1.25em]">
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">질문 한 건에도 검색어 생성, 자료 선별, 답변 생성, 재시도로 여러 유료 호출이 발생해 요청 횟수 제한만으로 전체 사용량 통제가 어려움</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동시 요청이 같은 잔여 예산을 읽거나 서버 재시작으로 집계가 초기화되면 설정한 한도를 초과할 가능성</li>
 </ul></section>
-<section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4><ul class="m-0 list-disc pl-[1.25em]">
+<section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4><ul class="m-0 list-disc pl-[1.25em]">
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">세션과 IP별 속도, 일일 접수량, 동시 작업 수를 함께 제한하고, IP와 세션은 HMAC 식별자로 집계</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">입력, 최대 출력, 재시도에 필요한 사용량을 호출 전에 예약하고 PostgreSQL 트랜잭션 잠금 안에서 한도 검사와 차감 수행</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">집계를 DB에 보관해 재시작 후에도 유지. 결과가 불명확한 실패는 예약을 환급하지 않고 DB 장애 시 모델 호출 차단</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">요청 ID가 같은 재전송은 기존 작업을 반환하고, 전체 한도 도달 후에도 모델을 사용하지 않는 기본 도감 조회 제공</li>
 </ul></section>
-<section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4><ul class="m-0 list-disc pl-[1.25em]">
+<section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4><ul class="m-0 list-disc pl-[1.25em]">
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동시 예약 테스트에서 예산 100에 25씩 예약한 12개 요청 중 4개만 허용하고, 재시작 후 추가 예약 차단을 검증</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">한도 직전 전체 호출 예약 실패 시 공급자에 요청이 전달되지 않는지, 세션 재발급, 만료, DB 장애에서도 제한이 유지되는지 회귀 테스트로 확인</li>
 <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">보수적 예약 토큰과 공급자 호출 수를 기준으로 제한하며 실제 사용 토큰이나 달러 청구액의 상한을 보장하지는 않음</li>
@@ -106,11 +104,11 @@
 </div></article>
 </section>
 </div></section>
-        <section class="project-section pt-[clamp(40px,6vw,64px)] pb-[clamp(64px,8vw,96px)] border-t border-line print:break-before-page print:p-0 print:first:break-before-auto" id="jiki" aria-labelledby="jiki-title">
-          <div class="project-heading">
+        <section class="pt-[clamp(40px,6vw,64px)] pb-[clamp(64px,8vw,96px)] border-t border-line print:break-before-page print:p-0 print:first:break-before-auto" id="jiki" aria-labelledby="jiki-title">
+          <div>
             <h2 id="jiki-title" class="mb-6 text-accent text-[clamp(30px,3vw,40px)] leading-[1.3] font-[750] tracking-[-.055em]">Jiki</h2>
-            <p class="project-description mb-6 px-7 py-6 rounded-2xl bg-surface text-[17px] font-[550] text-muted leading-[1.7] small:p-5 small:text-[16px]">약속 참여 여부와 도착 상태에 따른 벌금과 보상 정산 서비스</p>
-            <dl class="project-meta mb-10 text-[15px] small:text-[14px]">
+            <p class="mb-6 px-7 py-6 rounded-2xl bg-surface text-[17px] font-[550] text-muted leading-[1.7] small:p-5 small:text-[16px]">약속 참여 여부와 도착 상태에 따른 벌금과 보상 정산 서비스</p>
+            <dl class="mb-10 text-[15px] small:text-[14px]">
               <div class="grid grid-cols-[80px_minmax(0,1fr)] gap-4 my-3 small:grid-cols-[65px_minmax(0,1fr)] small:gap-3">
                 <dt class="text-label font-[550]">담당 역할</dt>
                 <dd class="m-0">백엔드 개발, 팀장</dd>
@@ -125,12 +123,12 @@
               </div>
             </dl>
           </div>
-          <div class="project-body">
-            <section class="architecture mb-10">
+          <div>
+            <section class="mb-10">
               <h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">시스템 구조</h3>
-              <button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/jiki/jiki-architecture.png?v=584d7908ebec" aria-label="지키 서비스 아키텍처 크게 보기"><img src="assets/jiki/jiki-architecture.png?v=584d7908ebec" alt="지키 서비스 아키텍처" width="1942" height="809" loading="lazy" class="max-w-full block w-full h-auto"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
+              <button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/jiki/jiki-architecture.png?v=584d7908ebec" aria-label="지키 서비스 아키텍처 크게 보기"><img src="assets/jiki/jiki-architecture.png?v=584d7908ebec" alt="지키 서비스 아키텍처" width="1942" height="809" loading="lazy" class="max-w-full block w-full h-auto"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
             </section>
-            <section class="features mb-12">
+            <section class="mb-12">
               <h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">핵심 기능</h3>
               <ul class="m-0 pl-0 list-none">
                 <li class="my-[9px] text-[16px] text-muted">약속 - 약속 생성 및 조회, 참여자 초대, 초대 수락과 거절, 참여 취소, 참여 마감 설정, 도착 상태 관리</li>
@@ -138,22 +136,22 @@
                 <li class="my-[9px] text-[16px] text-muted">기타 - JWT 인증, 친구 요청과 수락 및 거절, 친구 목록 조회</li>
               </ul>
             </section>
-            <section class="cases">
-              <h3 class="cases-heading text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">문제 해결</h3>
-              <article class="case pt-8 pb-6 border-t border-line">
+            <section>
+              <h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">문제 해결</h3>
+              <article class="pt-8 pb-6 border-t border-line">
                 <h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">1. 참여 상태 변경과 정산의 충돌 방지</h3>
-                <div class="case-content grid gap-4">
-                  <section class="case-block min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
-                    <button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/jiki/01-participation.png?v=4f13d317c161" aria-label="참여 변경과 정산이 같은 약속 잠금을 사용하는 구조 크게 보기"><img src="assets/jiki/01-participation.png?v=4f13d317c161" alt="참여 변경과 정산이 같은 약속 잠금을 사용하는 구조" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
+                <div class="grid gap-4">
+                  <section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
+                    <button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/jiki/01-participation.png?v=4f13d317c161" aria-label="참여 변경과 정산이 같은 약속 잠금을 사용하는 구조 크게 보기"><img src="assets/jiki/01-participation.png?v=4f13d317c161" alt="참여 변경과 정산이 같은 약속 잠금을 사용하는 구조" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">참여 마감과 취소 기능 구현 중 정산 대상 조회 후 금액 반영 전에 참여 상태가 바뀌면 정산 기준도 달라질 수 있음을 확인</li>
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">잠금 대기 전에 읽은 참여 상태를 다른 요청 처리 후에도 사용해 최신 변경을 반영하지 못하는 문제 발생</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">참여 변경과 정산에 같은 약속 행의 <code class="font-mono text-[.88em] bg-line px-[5px] py-0.5 rounded text-body">PESSIMISTIC_WRITE</code> 잠금을 적용해 정산 중 참여 상태 변경 방지</li>
@@ -161,7 +159,7 @@
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">마감 이후나 정산 완료 후 변경을 차단하고 수락한 참여자만 정산 대상에 포함</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">참여 변경과 정산의 처리 순서를 통일하고 잠금 획득 후 최신 상태를 확인하도록 변경</li>
@@ -171,13 +169,13 @@
                   </section>
                 </div>
               </article>
-              <article class="case pt-8 pb-6 border-t border-line">
+              <article class="pt-8 pb-6 border-t border-line">
                 <h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">2. 동시 정산 충돌과 금액 누락을 해결하고 재시도를 정상 처리</h3>
-                <div class="case-content grid gap-4">
-                  <section class="case-block min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
-                    <button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/jiki/03-settlement.png?v=e7e2ffc8de47" aria-label="약속 잠금과 계정 잠금 후 잔액과 거래 기록을 함께 저장하는 구조 크게 보기"><img src="assets/jiki/03-settlement.png?v=e7e2ffc8de47" alt="약속 잠금과 계정 잠금 후 잔액과 거래 기록을 함께 저장하는 구조" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
+                <div class="grid gap-4">
+                  <section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
+                    <button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/jiki/03-settlement.png?v=e7e2ffc8de47" aria-label="약속 잠금과 계정 잠금 후 잔액과 거래 기록을 함께 저장하는 구조 크게 보기"><img src="assets/jiki/03-settlement.png?v=e7e2ffc8de47" alt="약속 잠금과 계정 잠금 후 잔액과 거래 기록을 함께 저장하는 구조" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">약속별 잠금만으로는 공유 계정의 갱신 순서를 통제하지 못해 서로 다른 약속의 동시 정산 실험 20회 모두 데드락 발생</li>
@@ -186,7 +184,7 @@
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">완료된 정산의 재요청에도 409를 반환해 응답 유실 후 재시도를 정상 처리하지 못하는 문제</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">교차 대기를 피하려고 관리자 계정까지 사용자 ID 순서로 잠금 적용</li>
@@ -195,7 +193,7 @@
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">재요청 시 약속 ID로 확정 결과를 재사용하고 204를 반환해 금액 재반영과 중복 거래 기록 방지</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동시 정산 20회에서 데드락 실패가 20회 → 0회로 줄고 잔액과 거래 기록이 일치함을 확인</li>
@@ -206,13 +204,13 @@
                   </section>
                 </div>
               </article>
-              <article class="case pt-8 pb-6 border-t border-line">
+              <article class="pt-8 pb-6 border-t border-line">
                 <h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">3. 약속 목록 N+1 개선으로 SQL 202회에서 2회로 감소</h3>
-                <div class="case-content grid gap-4">
-                  <section class="case-block min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
-                    <button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/jiki/02-query.png?v=2e9d1a9b6deb" aria-label="목록 조회에서 반복 SQL을 fetch join으로 줄인 구조 크게 보기"><img src="assets/jiki/02-query.png?v=2e9d1a9b6deb" alt="목록 조회에서 반복 SQL을 fetch join으로 줄인 구조" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
+                <div class="grid gap-4">
+                  <section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
+                    <button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/jiki/02-query.png?v=2e9d1a9b6deb" aria-label="목록 조회에서 반복 SQL을 fetch join으로 줄인 구조 크게 보기"><img src="assets/jiki/02-query.png?v=2e9d1a9b6deb" alt="목록 조회에서 반복 SQL을 fetch join으로 줄인 구조" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">수락한 약속 50개에서 SQL 102회, 100개에서 202회가 실행돼 약속 수에 따라 조회 횟수가 늘어남을 확인</li>
@@ -220,7 +218,7 @@
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">수락 상태를 애플리케이션에서 필터링해 목록에 필요한 조건과 연관 데이터를 최초 DB 조회에 반영하지 못한 구조</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">반복 조회를 없애려고 약속과 생성자에 fetch join을 적용해 필요한 연관 데이터를 처음부터 함께 조회</li>
@@ -229,7 +227,7 @@
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동일 데이터로 k6 VU 1, 10, 30에서 개선 전후를 각 3회 측정하고 응답 데이터 검증</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">약속 100개 조회 시 SQL이 202회 → 2회로 약 99% 줄고 50개에서도 2회로 유지돼 목록 크기에 따른 SQL 증가 해소</li>
@@ -242,11 +240,11 @@
             </section>
           </div>
         </section>
-        <section class="project-section pt-[clamp(40px,6vw,64px)] pb-[clamp(64px,8vw,96px)] border-t border-line print:break-before-page print:p-0 print:first:break-before-auto" id="dajoba" aria-labelledby="dajoba-title">
-          <div class="project-heading">
+        <section class="pt-[clamp(40px,6vw,64px)] pb-[clamp(64px,8vw,96px)] border-t border-line print:break-before-page print:p-0 print:first:break-before-auto" id="dajoba" aria-labelledby="dajoba-title">
+          <div>
             <h2 id="dajoba-title" class="mb-6 text-accent text-[clamp(30px,3vw,40px)] leading-[1.3] font-[750] tracking-[-.055em]">다잡아</h2>
-            <p class="project-description mb-6 px-7 py-6 rounded-2xl bg-surface text-[17px] font-[550] text-muted leading-[1.7] small:p-5 small:text-[16px]">AI로 자기소개서를 분석해 크롤링으로 수집한 채용공고와 매칭하는 서비스</p>
-            <dl class="project-meta mb-10 text-[15px] small:text-[14px]">
+            <p class="mb-6 px-7 py-6 rounded-2xl bg-surface text-[17px] font-[550] text-muted leading-[1.7] small:p-5 small:text-[16px]">AI로 자기소개서를 분석해 크롤링으로 수집한 채용공고와 매칭하는 서비스</p>
+            <dl class="mb-10 text-[15px] small:text-[14px]">
               <div class="grid grid-cols-[80px_minmax(0,1fr)] gap-4 my-3 small:grid-cols-[65px_minmax(0,1fr)] small:gap-3">
                 <dt class="text-label font-[550]">담당 역할</dt>
                 <dd class="m-0">프론트엔드 개발</dd>
@@ -261,12 +259,12 @@
               </div>
             </dl>
           </div>
-          <div class="project-body">
-            <section class="architecture mb-10">
+          <div>
+            <section class="mb-10">
               <h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">시스템 구조</h3>
-              <button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/dajoba/dajoba-architecture.png?v=044b65844cdf" aria-label="다잡아 서비스 아키텍처 크게 보기"><img src="assets/dajoba/dajoba-architecture.png?v=044b65844cdf" alt="다잡아 서비스 아키텍처" width="1586" height="992" loading="lazy" class="max-w-full block w-full h-auto"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
+              <button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/dajoba/dajoba-architecture.png?v=044b65844cdf" aria-label="다잡아 서비스 아키텍처 크게 보기"><img src="assets/dajoba/dajoba-architecture.png?v=044b65844cdf" alt="다잡아 서비스 아키텍처" width="1586" height="992" loading="lazy" class="max-w-full block w-full h-auto"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
             </section>
-            <section class="features mb-12">
+            <section class="mb-12">
               <h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">핵심 기능</h3>
               <ul class="m-0 pl-0 list-none">
                 <li class="my-[9px] text-[16px] text-muted"><strong>채용공고 탐색</strong>: 직군별 필터, 페이지네이션, 공고 상세 조회</li>
@@ -274,22 +272,22 @@
                 <li class="my-[9px] text-[16px] text-muted"><strong>매칭 결과 확인</strong>: 기업별 매칭 점수와 순위 시각화, 추천 공고 연결</li>
               </ul>
             </section>
-            <section class="cases">
-              <h3 class="cases-heading text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">사용자 경험 개선</h3>
-              <article class="case pt-8 pb-6 border-t border-line">
+            <section>
+              <h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">사용자 경험 개선</h3>
+              <article class="pt-8 pb-6 border-t border-line">
                 <h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">1. 서버 페이지네이션으로 채용공고 조회 범위와 탐색 방식 개선</h3>
-                <div class="case-content grid gap-4">
-                  <section class="case-block min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
-                    <button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/dajoba/01-pagination.png?v=00648671b879" aria-label="채용공고 페이지네이션 흐름 크게 보기"><img src="assets/dajoba/01-pagination.png?v=00648671b879" alt="채용공고 페이지네이션 흐름" width="1907" height="825" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
+                <div class="grid gap-4">
+                  <section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
+                    <button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/dajoba/01-pagination.png?v=00648671b879" aria-label="채용공고 페이지네이션 흐름 크게 보기"><img src="assets/dajoba/01-pagination.png?v=00648671b879" alt="채용공고 페이지네이션 흐름" width="1907" height="825" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">모든 공고를 한 페이지에 불러와 로딩이 느리고 목록이 길어 어디까지 확인했는지 알기 어렵다는 사용자 의견 확인</li>
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">현재 화면에 필요한 공고 범위를 구분하지 않고 조회해 한 번에 조회하는 공고 수와 탐색 위치를 함께 개선할 필요</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">한 번에 가져오는 공고 수를 줄이도록 서버 페이지네이션 API를 연동하고 페이지당 최대 20건만 요청하도록 변경</li>
@@ -297,7 +295,7 @@
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">현재 페이지를 강조해 탐색 위치를 알리고 번호를 10개 단위로 표시하며 이전과 다음 버튼 이동 시 번호 구간도 함께 변경</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">전체 공고 일괄 조회에서 페이지당 최대 20건 조회로 변경</li>
@@ -307,13 +305,13 @@
                   </section>
                 </div>
               </article>
-              <article class="case pt-8 pb-6 border-t border-line">
+              <article class="pt-8 pb-6 border-t border-line">
                 <h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">2. 자기소개서 초안 자동 저장과 복원으로 작성 내용 유실 방지</h3>
-                <div class="case-content grid gap-4">
-                  <section class="case-block min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
-                    <button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/dajoba/03-draft.png?v=dd449266add5" aria-label="자기소개서 초안 저장과 복원 흐름 크게 보기"><img src="assets/dajoba/03-draft.png?v=dd449266add5" alt="자기소개서 초안 저장과 복원 흐름" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
+                <div class="grid gap-4">
+                  <section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
+                    <button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/dajoba/03-draft.png?v=dd449266add5" aria-label="자기소개서 초안 저장과 복원 흐름 크게 보기"><img src="assets/dajoba/03-draft.png?v=dd449266add5" alt="자기소개서 초안 저장과 복원 흐름" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">새 자기소개서의 입력값을 화면 상태에만 보관해 저장 전 새로고침하거나 다른 화면으로 이동하면 작성 내용이 사라짐</li>
@@ -321,7 +319,7 @@
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">사용자별 초안 구분과 응답 처리가 없으면 계정 변경이나 화면 이탈 후 도착한 서버 응답이 다른 초안에 영향을 줄 가능성</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">재방문 시 이어 쓸 수 있도록 초안을 사용자별 브라우저 저장소에 보관하고 입력이 멈추면 0.8초 후 저장</li>
@@ -331,7 +329,7 @@
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">화면을 떠난 뒤 도착한 서버 응답이 새로 작성한 초안을 삭제하지 않도록 응답 처리 보완</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">같은 브라우저에서 작성 화면을 다시 열면 제목과 내용 및 희망 직군을 복원해 이어서 작성 가능</li>
@@ -341,26 +339,26 @@
                   </section>
                 </div>
               </article>
-              <article class="case pt-8 pb-6 border-t border-line">
+              <article class="pt-8 pb-6 border-t border-line">
                 <h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">3. 분석 대기 화면에 스피너를 추가해 대기 상태 안내</h3>
-                <div class="case-content grid gap-4">
-                  <section class="case-block min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
-                    <button class="diagram focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/dajoba/02-loading.png?v=937486a600b0" aria-label="분석 대기 표시 흐름 크게 보기"><img src="assets/dajoba/02-loading.png?v=937486a600b0" alt="분석 대기 표시 흐름" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="zoom-hint absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
+                <div class="grid gap-4">
+                  <section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2">
+                    <button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/dajoba/02-loading.png?v=937486a600b0" aria-label="분석 대기 표시 흐름 크게 보기"><img src="assets/dajoba/02-loading.png?v=937486a600b0" alt="분석 대기 표시 흐름" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">정적인 안내 문구만 표시돼 분석 결과를 기다리는 중인지 화면이 멈춘 것인지 구분하기 어렵다는 사용자 의견 확인</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">문구만으로는 진행 상태를 알기 어렵다고 판단해 안내 문구 옆에 CSS 회전 애니메이션을 적용한 스피너 추가</li>
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">서버에서 매칭 결과를 받으면 대기 화면을 결과 화면으로 전환</li>
                     </ul>
                   </section>
-                  <section class="case-block min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
+                  <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">분석 결과를 기다리는 동안 회전하는 스피너로 대기 상태를 안내하고 결과를 받으면 화면이 전환되는지 확인</li>
@@ -373,14 +371,14 @@
         </section>
       </div>
     </main>
-    <footer class="site-footer wrap flex justify-between gap-5 pt-7 pb-10 border-t border-line text-[14px] text-label print:hidden w-[min(840px,calc(100%_-_40px))] mx-auto print:w-full">
+    <footer class="flex justify-between gap-5 pt-7 pb-10 border-t border-line text-[14px] text-label print:hidden w-[min(840px,calc(100%_-_40px))] mx-auto print:w-full">
       <span class="text-ink font-bold">강현준</span><a href="#top" class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] transition-[color,background-color] duration-[180ms] text-accent-hover no-underline hover:underline hover:underline-offset-4 min-h-8">맨 위로 ↑</a>
     </footer>
     <dialog id="image-dialog" aria-label="구조도 크게 보기" class="m-auto p-0 w-[min(1500px,95vw)] max-h-[90dvh] border border-line rounded-2xl bg-white text-ink shadow-[0_24px_80px_rgb(0_0_0/0.2)] backdrop:bg-[rgb(25_31_40/0.65)] backdrop:backdrop-blur-[4px] print:hidden">
-      <div class="dialog-toolbar flex items-center justify-between gap-4 py-4 px-5 border-b border-line text-[14px] small:p-3 small:text-[12px]">
+      <div class="flex items-center justify-between gap-4 py-4 px-5 border-b border-line text-[14px] small:p-3 small:text-[12px]">
         <span id="image-caption" class="min-w-0">구조도</span><button id="close-dialog" type="button" aria-label="이미지 닫기" class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] bg-surface text-ink border-0 py-2 px-3.5 rounded-lg cursor-pointer whitespace-nowrap text-[14px] hover:bg-line">닫기 <span aria-hidden="true">×</span></button>
       </div>
-      <div class="dialog-image overflow-auto max-h-[calc(90dvh_-_100px)] p-5 small:p-2">
+      <div class="overflow-auto max-h-[calc(90dvh_-_100px)] p-5 small:p-2">
         <img id="dialog-img" alt="" class="max-w-full block w-full small:min-w-[850px]">
       </div>
     </dialog>

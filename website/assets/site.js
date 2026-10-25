@@ -24,17 +24,17 @@ dialog.addEventListener('close', () => {
     image.removeAttribute('src');
     previousFocus?.focus({ preventScroll: true });
 });
-const navLinks = Array.from(document.querySelectorAll('.site-header nav a[href^="#"]'));
+const navLinks = Array.from(document.querySelectorAll('#site-header nav a[href^="#"]'));
 const projects = navLinks.map(link => document.querySelector(link.getAttribute('href')));
-const progressBar = document.querySelector('.scroll-progress span');
-const header = document.querySelector('.site-header');
+const progressBar = document.querySelector('#scroll-progress');
+const header = document.querySelector('#site-header');
 let scrollFrame = 0;
 function updateNavigation() {
     scrollFrame = 0;
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     const maxScroll = scrollHeight - clientHeight;
     const progress = maxScroll > 0 ? Math.min(1, Math.max(0, scrollTop / maxScroll)) : 0;
-    progressBar.style.transform = `scaleX(${progress})`;
+    progressBar.value = progress;
     const threshold = header.offsetHeight + window.innerHeight * 0.35;
     let activeIndex = -1;
     projects.forEach((project, index) => {

@@ -8,7 +8,7 @@
     <title>강현준 | 개발 포트폴리오</title>
     <link rel="icon" href="assets/favicon.svg?v=87214e178c6b" type="image/svg+xml">
     <link rel="stylesheet" href="assets/fonts/pretendard/pretendardvariable-dynamic-subset.css">
-    <link rel="stylesheet" href="assets/site.css?v=575b4e60ba9f">
+    <link rel="stylesheet" href="assets/site.css?v=030d26dfd11f">
     <script src="assets/site.js?v=04e87ad72b04" defer></script>
   </head>
   <body class="m-0 bg-white text-body font-sans text-[16px] leading-[1.75] tracking-[-.02em] break-keep [overflow-wrap:anywhere] selection:bg-[#dbeafe] selection:text-ink has-[dialog[open]]:overflow-hidden motion-reduce:[&_*]:transition-none motion-reduce:[&_*::before]:transition-none motion-reduce:[&_*::after]:transition-none print:text-[12px]">
@@ -187,9 +187,10 @@
                   <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid">
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
-                      <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">교차 대기를 피하려고 관리자 계정까지 사용자 ID 순서로 잠금 적용</li>
+                      <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">교차 대기를 피하려고 정산 전용 계정까지 사용자 ID 순서로 잠금 적용</li>
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">과거 잔액으로 계산하지 않도록 잠금 획득 후 DB의 현재 잔액을 조회해 정산에 사용</li>
-                      <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">벌금 배분 후 남은 금액을 관리자에게 적립하고 잔액, 거래 내역, 확정 결과를 한 트랜잭션으로 저장해 함께 반영</li>
+                      <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">벌금을 정시 도착자 수로 나눈 보상을 1원 단위로 올림해 균등 지급하고, 초과 지급액은 정산 전용 계정에서 차감</li>
+                      <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">정시 도착자가 없으면 벌금 전액을 정산 전용 계정에 적립하고, 잔액과 거래 내역 및 확정 결과를 한 트랜잭션으로 저장</li>
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">재요청 시 약속 ID로 확정 결과를 재사용하고 204를 반환해 금액 재반영과 중복 거래 기록 방지</li>
                     </ul>
                   </section>
@@ -197,10 +198,11 @@
                     <h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4>
                     <ul class="m-0 list-disc pl-[1.25em]">
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동시 정산 20회에서 데드락 실패가 20회 → 0회로 줄고 잔액과 거래 기록이 일치함을 확인</li>
-                      <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">1,000원을 3명에게 각 333원씩 지급하고 관리자에게 1원을 적립해 전체 잔액 보존</li>
+                      <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">4,000원을 3명에게 각 1,334원씩 지급하고, 초과 지급한 2원은 정산 전용 계정이 부담하도록 변경</li>
                       <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">k6 VU 10 재시도 300건 중 204 응답이 3건 → 300건으로 늘고 금액은 약속별 1회만 반영</li>
-                      <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">일반 테스트 82개를 통과해 정산 동작과 오류 발생 시 전체 롤백 검증</li>
+                      <li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">올림 지급과 전용 계정 부담금, 전원 지각, 재시도, 오류 시 전체 롤백을 검사하는 회귀 테스트 추가</li>
                     </ul>
+                    <p class="mt-4 text-[14px] text-label leading-[1.8]">동시 정산과 k6 수치는 이전 배분 정책에서 측정한 결과</p>
                   </section>
                 </div>
               </article>

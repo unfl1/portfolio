@@ -106,7 +106,7 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 @media (max-width: 480px) {
   .header-inner { gap: 12px; }
-  .site-header nav { grid-template-columns: .7fr .8fr 1.4fr; }
+  .site-header nav { grid-template-columns: 1.4fr .7fr .8fr; }
   .site-header nav a { font-size: 12px; }
   .brand { font-size: 15px; }
   .project-description { padding: 20px; font-size: 16px; }

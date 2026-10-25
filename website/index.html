@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="강현준의 개발 포트폴리오. Jiki 백엔드의 정산 정합성과 성능 개선, 다잡아 프론트엔드의 사용자 경험, 나만의 도서관의 클라우드 배포 기록.">
+    <meta name="description" content="강현준의 개발 포트폴리오. PokeTact의 근거 기반 AI 챗봇과 실서비스 운영, Jiki 백엔드의 정산 정합성과 성능 개선, 다잡아 프론트엔드의 사용자 경험 개선.">
     <meta name="theme-color" content="#ffffff">
     <title>강현준 | 개발 포트폴리오</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/site.css?v=b1faca4d733d">
-    <script src="assets/site.js?v=b487e591a212" defer></script>
+    <link rel="icon" href="assets/favicon.svg?v=87214e178c6b" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/site.css?v=5e5b438e959c">
+    <script src="assets/site.js?v=04e87ad72b04" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">본문으로 이동</a>
@@ -19,7 +19,7 @@
       <div class="header-inner">
         <a class="brand" href="#top">강현준</a>
         <nav aria-label="프로젝트 바로가기">
-          <a href="#jiki">Jiki</a><a href="#dajoba">다잡아</a><a href="#mylibrary">나만의 도서관</a>
+          <a href="#poketact">PokeTact</a><a href="#jiki">Jiki</a><a href="#dajoba">다잡아</a>
         </nav>
         <a class="github-link" href="https://github.com/unfl1" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
       </div>
@@ -29,6 +29,108 @@
         <h1>강현준 개발 포트폴리오</h1>
       </section>
       <div class="project-list">
+<section class="project-section" id="poketact" aria-labelledby="poketact-title">
+<div class="project-heading">
+<h2 id="poketact-title">PokeTact</h2>
+<p class="project-description">문서 근거와 전투 계산을 연결한 포켓몬 전략 챗봇 / HTTPS 실서비스 운영</p>
+<dl class="project-meta">
+<div><dt>담당 역할</dt><dd>프론트엔드, 백엔드, RAG, 인프라 구성과 운영</dd></div>
+<div><dt>기술</dt><dd>React, TypeScript, Python, FastAPI, LangChain, LangGraph, PostgreSQL, pgvector, Docker, AWS Lightsail, S3, CloudFront, GitHub Actions, Grafana</dd></div>
+<div><dt>서비스</dt><dd><a href="https://www.chikorita.xyz/" target="_blank" rel="noopener noreferrer">PokeTact 바로가기 ↗</a></dd></div>
+<div><dt>저장소</dt><dd><a href="https://github.com/unfl1/poketact" target="_blank" rel="noopener noreferrer">GitHub ↗</a></dd></div>
+</dl>
+</div>
+<div class="project-body">
+<section class="architecture"><h3>시스템 구조</h3>
+<button class="diagram" type="button" data-image="assets/poketact/system-architecture.png?v=11a918e1435b" aria-label="CloudFront와 S3, Lightsail의 FastAPI와 PostgreSQL, RAG, 자동 배포 및 Grafana 운영 관측 구조 크게 보기"><img src="assets/poketact/system-architecture.png?v=11a918e1435b" alt="CloudFront와 S3, Lightsail의 FastAPI와 PostgreSQL, RAG, 자동 배포 및 Grafana 운영 관측 구조" width="3520" height="2400" loading="lazy"><span class="zoom-hint">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
+<section class="features"><h3>핵심 기능</h3><ul>
+<li>근거 기반 챗봇 - 포켓몬 전략 질문, 대화별 전투 상태와 기록 복원, 실제 인용 자료 확인</li>
+<li>도감과 자연어 탐색 - 총 1,351개 항목의 타입, 종족값, 특성, 기술 조회와 조건 검색</li>
+<li>전투 시나리오 - 양쪽 팀 구성, 6대6의 3마리 선출 20개 조합 비교, 일반 타입 기반 공격, 교체 분석과 제한 조건의 참조 데미지 계산</li>
+</ul></section>
+<section class="cases"><h3 class="cases-heading">문제 해결과 실서비스 운영</h3>
+<article class="case"><h3>1. 검색 근거와 인용 검증으로 답변의 출처 추적</h3><div class="case-content">
+<section class="case-block"><button class="diagram" type="button" data-image="assets/poketact/01-evidence-handdrawn.png?v=90c4fd9fb000" aria-label="근거를 찾고 검증한 뒤 답변을 표시하는 흐름 크게 보기"><img src="assets/poketact/01-evidence-handdrawn.png?v=90c4fd9fb000" alt="근거를 찾고 검증한 뒤 답변을 표시하는 흐름" width="1908" height="824" loading="lazy"><span class="zoom-hint">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
+<section class="case-block"><h4>문제</h4><ul>
+<li>유사도 검색만으로는 선택한 포켓몬의 기본 정보가 빠지거나 다른 게임 범위의 문서와 중복 청크가 답변에 섞일 가능성</li>
+<li>모델이 만든 출처 번호를 그대로 표시하면 실제 검색 자료에 없는 인용이나 원문에 없는 게임 버전을 연결할 가능성</li>
+</ul></section>
+<section class="case-block"><h4>해결</h4><ul>
+<li>포켓몬 메타와 문서 청크를 pgvector의 두 논리 컬렉션으로 분리. 선택한 메타를 먼저 포함하고 적용 범위와 활성 색인 버전을 확인해 문서 검색</li>
+<li>동일 근거를 제거하고 유사도 검색과 MMR 중 선택하도록 구현해 관련도와 근거 다양성을 조정</li>
+<li>LangGraph의 검색, 생성 흐름에서 주장별 근거 ID와 원문 버전을 서버가 대조하고, 실제 인용한 자료만 화면에 표시</li>
+<li>잘못된 인용은 한 번 교정을 요청하고 실패하면 유보. 사실, 가정, 미확인 정보를 나누어 저장</li>
+</ul></section>
+<section class="case-block"><h4>결과</h4><ul>
+<li>기본 1,025종과 별도 폼 326개로 총 1,351개 도감 항목 구성. 질문에서 사용한 근거는 원문 링크로 확인</li>
+<li>검색 범위 필터, 중복 제거, 허위 인용 거부, 교정 실패 후 유보, MMR 적용 시 선택 메타 보존을 회귀 테스트로 검증</li>
+<li>인용 ID의 유효성 검사와 답변 내용의 정확성 검증을 구분. 현행 게임 적격성과 미검증 전투 정보는 확정하지 않도록 처리</li>
+</ul></section>
+</div></article>
+<article class="case"><h3>2. 반복 수집과 불필요한 생성 제거로 응답 지연 개선</h3><div class="case-content">
+<section class="case-block"><button class="diagram" type="button" data-image="assets/poketact/02-latency-handdrawn.png?v=15c0537a40c7" aria-label="질문 유형에 따라 준비된 근거와 새 자료 수집을 나누는 흐름 크게 보기"><img src="assets/poketact/02-latency-handdrawn.png?v=15c0537a40c7" alt="질문 유형에 따라 준비된 근거와 새 자료 수집을 나누는 흐름" width="1909" height="824" loading="lazy"><span class="zoom-hint">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
+<section class="case-block"><h4>문제</h4><ul>
+<li>자료가 준비된 간단한 대면 질문에서도 검색어 생성, 후보 선별, 외부 수집을 반복해 응답 지연 발생</li>
+<li>선출 계산에서는 최종 답변에 사용하지 않는 모델 문장을 생성한 뒤 버리는 처리 확인</li>
+</ul></section>
+<section class="case-block"><h4>해결</h4><ul>
+<li>계산 자료가 준비된 단순 대면은 기존 RAG 색인을 검색. 일반 전략, 최신 자료, 명시적 조사 요청은 외부 수집 경로 유지</li>
+<li>선출 결과는 근거 검색 후 계산한 내용의 인용을 직접 검증하고 화면에 표시해 불필요한 생성 호출 제거</li>
+<li>모든 호출의 추론 수준을 낮춘 실험에서 선봉 역할 혼동을 확인해 상태 추출은 medium으로 유지하고 나머지 호출만 조정</li>
+</ul></section>
+<section class="case-block"><h4>결과</h4><ul>
+<li>로컬의 같은 3개 합성 대화 동시 검증에서 응답 시간 중앙값 62.8초 → 20.4초로 약 67.5% 감소</li>
+<li>단독 측정에서 대면 46.96초 → 15.26초, 선출 18.81초 → 10.61초로 감소</li>
+<li>최종 실제 모델 질문 17건에서 선봉, 대화 상태, 타입 계산, 선출 후보 일치를 재확인하고, 단순 대면의 외부 수집 생략과 조사 요청의 수집 유지를 회귀 테스트로 검증</li>
+<li>준비 자료와 검색 캐시를 사용한 당시 로컬 측정값으로, 전체 질문이나 운영 트래픽의 응답 시간을 보장하지는 않음</li>
+</ul></section>
+</div></article>
+<article class="case"><h3>3. 동시 요청과 재시도에 대한 모델 사용량 제한</h3><div class="case-content">
+<section class="case-block"><button class="diagram" type="button" data-image="assets/poketact/03-budget-handdrawn.png?v=00098ab3e6dd" aria-label="요청 접수와 모델 호출 전 예약으로 사용량을 제한하는 흐름 크게 보기"><img src="assets/poketact/03-budget-handdrawn.png?v=00098ab3e6dd" alt="요청 접수와 모델 호출 전 예약으로 사용량을 제한하는 흐름" width="1908" height="824" loading="lazy"><span class="zoom-hint">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
+<section class="case-block"><h4>문제</h4><ul>
+<li>질문 한 건에도 검색어 생성, 자료 선별, 답변 생성, 재시도로 여러 유료 호출이 발생해 요청 횟수 제한만으로 전체 사용량 통제가 어려움</li>
+<li>동시 요청이 같은 잔여 예산을 읽거나 서버 재시작으로 집계가 초기화되면 설정한 한도를 초과할 가능성</li>
+</ul></section>
+<section class="case-block"><h4>해결</h4><ul>
+<li>세션과 IP별 속도, 일일 접수량, 동시 작업 수를 함께 제한하고, IP와 세션은 HMAC 식별자로 집계</li>
+<li>입력, 최대 출력, 재시도에 필요한 사용량을 호출 전에 예약하고 PostgreSQL 트랜잭션 잠금 안에서 한도 검사와 차감 수행</li>
+<li>집계를 DB에 보관해 재시작 후에도 유지. 결과가 불명확한 실패는 예약을 환급하지 않고 DB 장애 시 모델 호출 차단</li>
+<li>요청 ID가 같은 재전송은 기존 작업을 반환하고, 전체 한도 도달 후에도 모델을 사용하지 않는 기본 도감 조회 제공</li>
+</ul></section>
+<section class="case-block"><h4>결과</h4><ul>
+<li>동시 예약 테스트에서 예산 100에 25씩 예약한 12개 요청 중 4개만 허용하고, 재시작 후 추가 예약 차단을 검증</li>
+<li>한도 직전 전체 호출 예약 실패 시 공급자에 요청이 전달되지 않는지, 세션 재발급, 만료, DB 장애에서도 제한이 유지되는지 회귀 테스트로 확인</li>
+<li>보수적 예약 토큰과 공급자 호출 수를 기준으로 제한하며 실제 사용 토큰이나 달러 청구액의 상한을 보장하지는 않음</li>
+</ul></section>
+</div></article>
+<article class="case"><h3>4. HTTPS 실서비스 배포와 자동 배포, 운영 관측 구축</h3><div class="case-content">
+<section class="case-block"><button class="diagram" type="button" data-image="assets/poketact/04-delivery-handdrawn.png?v=1ff5f1d78d2e" aria-label="검증한 결과물 배포와 운영 상태 관측 흐름 크게 보기"><img src="assets/poketact/04-delivery-handdrawn.png?v=1ff5f1d78d2e" alt="검증한 결과물 배포와 운영 상태 관측 흐름" width="1908" height="824" loading="lazy"><span class="zoom-hint">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
+<section class="case-block"><h4>문제</h4><ul>
+<li>로컬에서 실행하던 서비스를 공개하려면 HTTPS, 세션 격리, 원본 접근 제한과 재배포 절차가 필요</li>
+<li>배포 실패 시 복구 수단과 API, 모델, 서버 상태를 확인할 지표가 필요했고, 첫 자동 배포에서 AWS OIDC 신뢰 조건 불일치로 인증 실패</li>
+</ul></section>
+<section class="case-block"><h4>해결</h4><ul>
+<li>CloudFront에서 정적 파일은 비공개 S3로, API는 Lightsail의 Nginx와 FastAPI로 분기. API 캐시를 비활성화해 같은 출처의 세션 유지</li>
+<li>GitHub Actions에서 DB 회귀와 프론트, Docker 빌드를 통과한 결과물을 배포. API 준비 상태 확인에 실패하면 이전 이미지로 복구</li>
+<li>GitHub API에서 조회한 저장소 식별자로 OIDC 신뢰 조건을 수정하고, AWS 임시 자격증명과 강제 명령 전용 SSH 키로 배포 권한 제한</li>
+<li>Prometheus 지표와 Alloy, Loki 로그를 Grafana에서 확인하고, 질문, 답변, 쿠키를 제외한 운영 정보만 수집하며 관측 포트는 비공개로 구성</li>
+</ul></section>
+<section class="case-block"><h4>결과</h4><ul>
+<li>2026년 10월 24일 실제 HTTPS 화면에서 질문 응답과 근거 표시, 새로고침 후 대화 유지, 두 독립 세션 및 원본 직접 호출 차단 확인</li>
+<li>OIDC 인증 오류 수정 후 실제 Actions의 백엔드 배포, S3 게시, CloudFront 무효화, 공개 화면과 API 준비 상태 검사 통과</li>
+<li>사용량 보호 반영 PR의 CI에서 백엔드 304건 통과, 선택 검사 2건 건너뜀, 프론트, 이미지 빌드와 Grafana, 로그 수집 통합 검증 통과</li>
+<li>PR #32 병합 후 main 자동 배포 성공 확인. 컨테이너 교체 중 중단 가능성이 있어 무중단 배포와 구분</li>
+</ul></section>
+</div></article>
+</section>
+<section class="resources"><h3>코드와 운영 기록</h3><ul>
+<li><a href="https://github.com/unfl1/poketact/blob/main/backend/app/rag/graph.py" target="_blank" rel="noopener noreferrer">검색과 인용 검증 코드 ↗</a></li>
+<li><a href="https://github.com/unfl1/poketact/blob/main/backend/tests/test_chat_latency.py" target="_blank" rel="noopener noreferrer">응답 지연 개선 회귀 테스트 ↗</a></li>
+<li><a href="https://github.com/unfl1/poketact/blob/main/backend/tests/test_usage.py" target="_blank" rel="noopener noreferrer">모델 사용량 제한과 동시 예약 테스트 ↗</a></li>
+<li><a href="https://github.com/unfl1/poketact/blob/main/docs/guides/OPERATIONS.md" target="_blank" rel="noopener noreferrer">자동 배포와 운영 관측 구성 ↗</a></li>
+<li><a href="https://github.com/unfl1/poketact/actions/runs/40094816463" target="_blank" rel="noopener noreferrer">사용량 보호 반영 후 main 자동 배포 기록 ↗</a></li>
+</ul></section>
+</div></section>
         <section class="project-section" id="jiki" aria-labelledby="jiki-title">
           <div class="project-heading">
             <h2 id="jiki-title">Jiki</h2>
@@ -296,109 +398,6 @@
                     <h4>결과</h4>
                     <ul>
                       <li>분석 결과를 기다리는 동안 회전하는 스피너로 대기 상태를 안내하고 결과를 받으면 화면이 전환되는지 확인</li>
-                    </ul>
-                  </section>
-                </div>
-              </article>
-            </section>
-          </div>
-        </section>
-        <section class="project-section" id="mylibrary" aria-labelledby="mylibrary-title">
-          <div class="project-heading">
-            <h2 id="mylibrary-title">나만의 도서관</h2>
-            <p class="project-description">Docker와 Kubernetes 기반 클라우드 배포 및 운영</p>
-            <dl class="project-meta">
-              <div>
-                <dt>담당 역할</dt>
-                <dd>프론트엔드, 백엔드, 인프라</dd>
-              </div>
-              <div>
-                <dt>기술</dt>
-                <dd>React, Java, Spring Boot, Spring Data JPA, MariaDB, Docker, Kubernetes, Jenkins, k6, Grafana</dd>
-              </div>
-              <div>
-                <dt>저장소</dt>
-                <dd><a href="https://github.com/unfl1/mylibrary" target="_blank" rel="noopener noreferrer">GitHub ↗</a></dd>
-              </div>
-            </dl>
-          </div>
-          <div class="project-body">
-            <section class="architecture">
-              <h3>시스템 구조</h3>
-              <button class="diagram" type="button" data-image="assets/mylibrary/system-overview.png?v=c376e4d5c048" aria-label="GitHub와 Jenkins, Kubernetes 컨테이너 배포 환경, k6와 Grafana를 연결한 전체 시스템 구조 크게 보기"><img src="assets/mylibrary/system-overview.png?v=c376e4d5c048" alt="GitHub와 Jenkins, Kubernetes 컨테이너 배포 환경, k6와 Grafana를 연결한 전체 시스템 구조" width="1672" height="941" loading="lazy"><span class="zoom-hint">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
-            </section>
-            <section class="features">
-              <h3>핵심 기능</h3>
-              <ul>
-                <li>도서 공유 - 도서 대여 게시글 등록, 목록 및 상세 조회, 제목 검색, 본인 게시글 조회와 삭제</li>
-                <li>이미지 및 댓글 - 게시글 이미지 첨부와 조회, 댓글 기능</li>
-                <li>회원 - 회원가입과 로그인</li>
-              </ul>
-            </section>
-            <section class="cases">
-              <h3 class="cases-heading">배포 환경 구축</h3>
-              <article class="case">
-                <h3>1. 프론트엔드 및 백엔드 컨테이너화와 Kubernetes 배포</h3>
-                <div class="case-content">
-                  <section class="case-block">
-                    <button class="diagram" type="button" data-image="assets/mylibrary/service-containers.png?v=16da8742df30" aria-label="React, Spring Boot, MariaDB의 Docker 컨테이너를 Kubernetes로 관리하는 구조 크게 보기"><img src="assets/mylibrary/service-containers.png?v=16da8742df30" alt="React, Spring Boot, MariaDB의 Docker 컨테이너를 Kubernetes로 관리하는 구조" width="1908" height="824" loading="lazy"><span class="zoom-hint">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
-                  </section>
-                  <section class="case-block">
-                    <h4>구축 과정</h4>
-                    <ul>
-                      <li>서비스별 실행 환경을 관리하도록 프론트엔드와 백엔드 저장소를 분리하고 각각 Dockerfile 작성</li>
-                      <li>프론트엔드는 이미지 빌드 중 React를 빌드해 <code>serve</code>로 제공하고, 백엔드는 빌드된 JAR을 포함해 Java 17 환경에서 실행</li>
-                      <li>생성한 이미지로 클라우드 Kubernetes 환경에 배포하고 환경에 맞게 DB 연결과 외부 API 접근 및 이미지 저장 위치 조정</li>
-                    </ul>
-                  </section>
-                  <section class="case-block">
-                    <h4>결과</h4>
-                    <ul>
-                      <li>프론트엔드와 백엔드 컨테이너를 클라우드 Kubernetes 환경에서 실행</li>
-                      <li>서비스별 실행 환경과 시작 명령을 Dockerfile로 관리</li>
-                    </ul>
-                  </section>
-                </div>
-              </article>
-              <article class="case">
-                <h3>2. GitHub Webhook과 Jenkins 연동 및 빌드 자동화</h3>
-                <div class="case-content">
-                  <section class="case-block">
-                    <button class="diagram" type="button" data-image="assets/mylibrary/delivery-flow.png?v=5735817fae4f" aria-label="로컬 개발, GitHub, Jenkins, Kubernetes로 이어지는 배포 흐름 크게 보기"><img src="assets/mylibrary/delivery-flow.png?v=5735817fae4f" alt="로컬 개발, GitHub, Jenkins, Kubernetes로 이어지는 배포 흐름" width="1907" height="825" loading="lazy"><span class="zoom-hint">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
-                  </section>
-                  <section class="case-block">
-                    <h4>구축 과정</h4>
-                    <ul>
-                      <li>코드 변경 시 빌드가 실행되도록 클라우드 서버에 Jenkins를 설치하고 GitHub 저장소의 Webhook 연동</li>
-                      <li>저장소에 코드를 push하면 Jenkins 빌드가 자동으로 시작되도록 설정하고 실행 결과 확인</li>
-                    </ul>
-                  </section>
-                  <section class="case-block">
-                    <h4>결과</h4>
-                    <ul>
-                      <li>GitHub에 push한 코드의 변경 감지부터 Jenkins 빌드 실행까지 자동화해 빌드를 수동으로 시작하는 과정 대체</li>
-                    </ul>
-                  </section>
-                </div>
-              </article>
-              <article class="case">
-                <h3>3. k6 부하 테스트와 수동 Pod 확장</h3>
-                <div class="case-content">
-                  <section class="case-block">
-                    <button class="diagram" type="button" data-image="assets/mylibrary/load-monitoring.png?v=3255be3c7f7b" aria-label="k6, 서버, Grafana를 활용한 부하 테스트와 모니터링 크게 보기"><img src="assets/mylibrary/load-monitoring.png?v=3255be3c7f7b" alt="k6, 서버, Grafana를 활용한 부하 테스트와 모니터링" width="1908" height="824" loading="lazy"><span class="zoom-hint">그림 크게 보기 <span aria-hidden="true">↗</span></span></button>
-                  </section>
-                  <section class="case-block">
-                    <h4>수행 과정</h4>
-                    <ul>
-                      <li>Kubernetes에 배포한 서비스를 대상으로 k6에서 HTTP 요청을 보내 부하 테스트 수행</li>
-                      <li>부하 테스트 중 Pod 수를 수동으로 늘리는 스케일 아웃으로 서비스 실행 규모 조정</li>
-                      <li>Grafana 대시보드에서 배포 환경의 상태를 확인하며 테스트와 Pod 확장 과정 관찰</li>
-                    </ul>
-                  </section>
-                  <section class="case-block">
-                    <h4>결과</h4>
-                    <ul>
-                      <li>배포된 서비스에 부하를 발생시키고 Pod를 수동으로 늘려 보며 Kubernetes 실행 규모 조정과 상태 모니터링 경험 확보</li>
                     </ul>
                   </section>
                 </div>

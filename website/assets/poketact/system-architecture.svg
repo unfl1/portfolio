@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1200" viewBox="0 0 1760 1200"><defs>
+<marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto-start-reverse"><path d="M1 1L7 4L1 7" fill="none" stroke="#718398" stroke-width="1.5"/></marker>
+<marker id="deploy" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="#8794a8" stroke-width="1.5"/></marker>
+<style>text{font-family:'Apple SD Gothic Neo','Noto Sans CJK KR','Arial',sans-serif;fill:#163356} .title{font-size:23px;font-weight:700}.sub{font-size:17px;fill:#53677e}.label{font-size:17px;font-weight:600}.small{font-size:15px;fill:#62758a}.line{fill:none;stroke:#718398;stroke-width:2;stroke-linejoin:round;marker-end:url(#arrow)}.icon{fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style></defs><rect width="1760" height="1200" fill="white"/>
+<text x="55" y="58" class="title" text-anchor="start">PokeTact</text>
+<text x="55" y="95" class="title" text-anchor="start">시스템 구조</text>
+<text x="1705" y="59" class="sub" text-anchor="end">RAG 기반 포켓몬 전략 어시스턴트</text>
+<text x="1705" y="91" class="small" text-anchor="end">2026.10.24 / develop 코드 / 배포 구성 기준</text>
+<rect x="320" y="145" width="990" height="660" rx="10" fill="#fcfdff" stroke="#91aac3" stroke-width="1.7"/>
+<text x="345" y="180" class="title" text-anchor="start">AWS</text>
+<rect x="610" y="385" width="665" height="385" rx="8" fill="#fff" stroke="#a2b9cf" stroke-width="1.7"/>
+<g transform="translate(632 400)" class="icon" color="#d78324"><rect x="8" y="5" width="48" height="23" rx="4"/><rect x="8" y="37" width="48" height="23" rx="4"/><path d="M18 16H19M18 48H19M30 16H46M30 48H46"/></g>
+<text x="712" y="430" class="title" text-anchor="start">Amazon Lightsail</text>
+<text x="712" y="457" class="sub" text-anchor="start">Docker Compose / API / DB 컨테이너</text>
+<rect x="55" y="270" width="200" height="180" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<g transform="translate(123.0 287)" class="icon" color="#235884"><rect x="3" y="8" width="58" height="43" rx="5"/><path d="M3 20H61"/><circle cx="11" cy="14" r="1"/><circle cx="18" cy="14" r="1"/><path d="M22 59H42M32 51V59"/></g>
+<text x="155.0" y="374" class="title" text-anchor="middle">웹 브라우저</text>
+<text x="155.0" y="402" class="sub" text-anchor="middle">React / TypeScript</text>
+<text x="155.0" y="426" class="sub" text-anchor="middle">Vite / Tailwind CSS</text>
+<rect x="355" y="270" width="205" height="180" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<g transform="translate(425.5 287)" class="icon" color="#7551ad"><path d="M17 49H48a13 13 0 0 0 1-26 18 18 0 0 0-34-2 14 14 0 0 0 2 28Z"/><path d="M24 35H42M33 26V44"/></g>
+<text x="457.5" y="374" class="title" text-anchor="middle">CloudFront</text>
+<text x="457.5" y="402" class="sub" text-anchor="middle">HTTPS / 경로 분기</text>
+<text x="457.5" y="426" class="sub" text-anchor="middle">정적 자산 캐시</text>
+<rect x="665" y="195" width="275" height="160" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<g transform="translate(770.5 212)" class="icon" color="#bd7020"><ellipse cx="32" cy="13" rx="24" ry="8"/><path d="M8 13L13 52Q32 64 51 52L56 13M12 43Q32 54 52 43"/></g>
+<text x="802.5" y="299" class="title" text-anchor="middle">Amazon S3</text>
+<text x="802.5" y="327" class="sub" text-anchor="middle">React 빌드 파일 / 비공개 원본</text>
+<path d="M255 355H355" class="line" marker-start="url(#arrow)"/>
+<text x="305" y="335" class="label" text-anchor="middle">HTTPS</text>
+<path d="M560 312H602V275H665" class="line" marker-start="url(#arrow)"/>
+<text x="610" y="245" class="label" text-anchor="middle">정적 파일</text>
+<path d="M455 450V570H640" class="line" marker-start="url(#arrow)"/>
+<text x="470" y="540" class="label" text-anchor="start">/api/*</text>
+<rect x="640" y="495" width="170" height="150" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<g transform="translate(693 506)" class="icon" color="#235884"><path d="M32 4L58 19V49L32 64L6 49V19Z" fill="#27823d" stroke="none"/><path d="M21 45V23L43 45V23" stroke="white" stroke-width="5"/></g>
+<text x="725" y="600" class="title" text-anchor="middle">Nginx</text>
+<text x="725" y="627" class="sub" text-anchor="middle">HTTPS 프록시</text>
+<rect x="865" y="485" width="370" height="160" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<g transform="translate(883 495)" class="icon" color="#235884"><path d="M37 5L15 36H31L25 59L51 26H35Z" fill="#009b88" stroke="none"/></g>
+<text x="958" y="522" class="title" text-anchor="start">FastAPI</text>
+<text x="958" y="549" class="sub" text-anchor="start">요청 검증 / 세션 / 작업 처리</text>
+<rect x="885" y="570" width="330" height="52" rx="5" fill="#f2f7fc" stroke="#d4e1ed" stroke-width="1.7"/>
+<text x="1050" y="592" class="label" text-anchor="middle">LangChain / LangGraph</text>
+<text x="1050" y="613" class="small" text-anchor="middle">검색 → 생성 → 인용 검증</text>
+<path d="M810 565H865" class="line" marker-start="url(#arrow)"/>
+<text x="838" y="546" class="small" text-anchor="middle">API</text>
+<rect x="640" y="690" width="170" height="58" rx="6" fill="#fff" stroke="#8eaac5" stroke-width="1.7"/>
+<text x="725" y="714" class="label" text-anchor="middle">JSON / 원문 캐시</text>
+<text x="725" y="737" class="small" text-anchor="middle">기준 자료 / 출처</text>
+<rect x="865" y="690" width="370" height="58" rx="6" fill="#fff" stroke="#8eaac5" stroke-width="1.7"/>
+<text x="1050" y="714" class="title" text-anchor="middle">PostgreSQL + pgvector</text>
+<text x="1050" y="737" class="small" text-anchor="middle">대화 / 작업 저장 / 메타 / 문서 벡터 검색</text>
+<path d="M1050 645V690" class="line" marker-start="url(#arrow)"/>
+<text x="1070" y="672" class="small" text-anchor="start">조회 / 저장</text>
+<path d="M780 690V663H910V645" class="line"/>
+<text x="788" y="681" class="small" text-anchor="start">자료</text>
+<rect x="1390" y="300" width="310" height="200" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<g transform="translate(1513.0 317)" class="icon" color="#008c81"><rect x="11" y="10" width="43" height="43" rx="10"/><path d="M22 1V10M43 1V10M22 53V63M43 53V63M1 23H11M1 42H11M54 23H64M54 42H64"/><path d="M23 39L32 23L41 39M26 34H38"/></g>
+<text x="1545.0" y="404" class="title" text-anchor="middle">LLM API</text>
+<text x="1545.0" y="432" class="sub" text-anchor="middle">OpenAI 호환 공급자</text>
+<text x="1545.0" y="456" class="sub" text-anchor="middle">근거를 활용한 답변 생성</text>
+<text x="1545.0" y="480" class="sub" text-anchor="middle">서버에서만 모델 키 사용</text>
+<path d="M1235 538H1340V400H1390" class="line" marker-start="url(#arrow)"/>
+<text x="1358" y="536" class="label" text-anchor="start">모델 호출</text>
+<rect x="1390" y="565" width="310" height="177" rx="8" fill="#f8fafc" stroke="#c9d7e5" stroke-width="1.7"/>
+<g transform="translate(1408 579)" class="icon" color="#235884"><path d="M16 3H41L54 17V60H16ZM41 3V17H54M25 29H44M25 39H44M25 49H39"/></g>
+<text x="1493" y="603" class="title" text-anchor="start">로컬 임베딩</text>
+<text x="1493" y="631" class="sub" text-anchor="start">MiniLM / ONNX</text>
+<text x="1412" y="680" class="label" text-anchor="start">질문 / 문서 → 벡터 변환</text>
+<text x="1412" y="711" class="small" text-anchor="start">API 프로세스 내부 실행</text>
+<path d="M1390 652H1340V612H1235" class="line" stroke-dasharray="7 6"/>
+<rect x="55" y="860" width="610" height="250" rx="8" fill="#fcfdff" stroke="#a2b9cf" stroke-width="1.7"/>
+<text x="80" y="895" class="title" text-anchor="start">자동 배포</text>
+<g transform="translate(85 920)" class="icon" color="#235884"><circle cx="16" cy="12" r="6"/><circle cx="48" cy="18" r="6"/><circle cx="16" cy="53" r="6"/><path d="M16 18V47M48 24V30Q48 39 35 39H16"/></g>
+<text x="169" y="948" class="title" text-anchor="start">GitHub → GitHub Actions</text>
+<text x="169" y="977" class="sub" text-anchor="start">main 반영 → 테스트 / 빌드 → 배포</text>
+<text x="89" y="1025" class="label" text-anchor="start">프론트엔드</text>
+<text x="250" y="1025" class="sub" text-anchor="start">S3 업로드 / CloudFront 캐시 무효화</text>
+<text x="89" y="1062" class="label" text-anchor="start">백엔드</text>
+<text x="250" y="1062" class="sub" text-anchor="start">SSH로 이미지 전달 / Compose 갱신</text>
+<path d="M360 860V790H590V570H640" class="line" stroke-dasharray="7 6"/>
+<text x="378" y="833" class="small" text-anchor="start">배포</text>
+<rect x="715" y="860" width="985" height="250" rx="8" fill="#fcfdff" stroke="#a2b9cf" stroke-width="1.7"/>
+<text x="740" y="895" class="title" text-anchor="start">운영 관측 / Lightsail 내부 Docker Compose</text>
+<rect x="745" y="920" width="230" height="62" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<text x="860" y="946" class="label" text-anchor="middle">API / 서버 지표</text>
+<text x="860" y="969" class="small" text-anchor="middle">FastAPI / node-exporter</text>
+<rect x="1025" y="920" width="230" height="62" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<text x="1140" y="958" class="title" text-anchor="middle">Prometheus</text>
+<rect x="745" y="1010" width="230" height="62" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<text x="860" y="1048" class="label" text-anchor="middle">운영 로그 → Alloy</text>
+<rect x="1025" y="1010" width="230" height="62" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<text x="1140" y="1048" class="title" text-anchor="middle">Loki</text>
+<rect x="1375" y="940" width="285" height="107" rx="8" fill="white" stroke="#8eaac5" stroke-width="1.7"/>
+<g transform="translate(1388 954)" class="icon" color="#e78424"><path d="M8 6V56H61M17 43L29 29L40 36L56 16"/><circle cx="56" cy="16" r="3"/></g>
+<text x="1545" y="981" class="title" text-anchor="middle">Grafana</text>
+<text x="1545" y="1014" class="sub" text-anchor="middle">지표 / 로그 / 경보</text>
+<path d="M975 951H1025" class="line"/>
+<path d="M975 1041H1025" class="line"/>
+<path d="M1255 951H1310V972H1375" class="line"/>
+<path d="M1255 1041H1310V1018H1375" class="line"/>
+<text x="1660" y="1093" class="small" text-anchor="end">관리자 SSH 터널로 접근</text>
+<path d="M1248 645H1289V830H860V860" class="line" stroke-dasharray="7 6"/>
+<text x="1060" y="822" class="small" text-anchor="start">지표 / 로그 수집</text>
+<text x="55" y="1155" class="small" text-anchor="start">실선  서비스 / 데이터 흐름     점선  배포 / 운영 연결 및 프로세스 내부 구성 설명</text>
+<text x="1705" y="1155" class="small" text-anchor="end">DB / 모니터링 포트 외부 비공개</text>
+</svg>

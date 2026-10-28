@@ -41,7 +41,7 @@
 </div>
 <div>
 <section class="mb-10"><h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">시스템 구조</h3>
-<button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/system-architecture-logos.png?v=584304184a7c" aria-label="CloudFront와 Lightsail의 Nginx, Next.js, FastAPI, PostgreSQL 및 LLM API 연결 구조 크게 보기"><img src="assets/poketact/system-architecture-logos.png?v=584304184a7c" alt="CloudFront와 Lightsail의 Nginx, Next.js, FastAPI, PostgreSQL 및 LLM API 연결 구조" width="1774" height="887" loading="lazy" class="max-w-full block w-full h-auto"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
+<button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/system-architecture-operations.png?v=f1b73a2c8d4a" aria-label="서비스 연결과 GitHub Actions 자동 배포 및 Grafana 운영 관측 구조 크게 보기"><img src="assets/poketact/system-architecture-operations.png?v=f1b73a2c8d4a" alt="서비스 연결과 GitHub Actions 자동 배포 및 Grafana 운영 관측 구조" width="1702" height="924" loading="lazy" class="max-w-full block w-full h-auto"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
 <section class="mb-12"><h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">핵심 기능</h3><ul class="m-0 pl-0 list-none">
 <li class="my-[9px] text-[16px] text-muted">근거 기반 챗봇 - 포켓몬 전략 질문, 대화별 전투 상태와 기록 복원, 실제 인용 자료 확인</li>
 <li class="my-[9px] text-[16px] text-muted">도감과 자연어 탐색 - 총 1,351개 항목의 타입, 종족값, 특성, 기술 조회와 조건 검색</li>
@@ -50,59 +50,55 @@
 <li class="my-[9px] text-[16px] text-muted">다국어 화면 - 한국어, 영어, 일본어, 중국어 경로와 페이지별 검색 메타데이터 제공</li>
 </ul></section>
 <section><h3 class="text-[clamp(22px,2vw,26px)] font-[720] text-ink tracking-[-.04em] mb-6 leading-[1.4]">문제 해결과 실서비스 운영</h3>
-<article class="pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">1. 검색 근거와 인용 검증으로 답변의 출처 추적</h3><div class="grid gap-4">
+<article class="pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">1. 검색 범위와 주장별 인용 검증으로 잘못된 근거 차단</h3><div class="grid gap-4">
 <section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2"><button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/01-evidence-handdrawn.png?v=90c4fd9fb000" aria-label="근거를 찾고 검증한 뒤 답변을 표시하는 흐름 크게 보기"><img src="assets/poketact/01-evidence-handdrawn.png?v=90c4fd9fb000" alt="근거를 찾고 검증한 뒤 답변을 표시하는 흐름" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
 <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4><ul class="m-0 list-disc pl-[1.25em]">
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">유사도 검색만으로는 선택한 포켓몬의 기본 정보가 빠지거나 다른 게임 범위의 문서와 중복 청크가 답변에 섞일 가능성</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">모델이 만든 출처 번호를 그대로 표시하면 실제 검색 자료에 없는 인용이나 원문에 없는 게임 버전을 연결할 가능성</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">유사도 검색만으로는 선택한 포켓몬의 정보 누락과 다른 게임 문서의 혼입 가능성</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">모델이 만든 출처 번호를 그대로 표시하면 존재하지 않는 근거나 원문에 없는 게임 버전 인용 가능</li>
 </ul></section>
 <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4><ul class="m-0 list-disc pl-[1.25em]">
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">포켓몬 메타와 문서 청크를 pgvector의 두 논리 컬렉션으로 분리. 선택한 메타를 먼저 포함하고 적용 범위와 활성 색인 버전을 확인해 문서 검색</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동일 근거를 제거하고 유사도 검색과 MMR 중 선택하도록 구현해 관련도와 근거 다양성을 조정</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">LangGraph의 검색, 생성 흐름에서 주장별 근거 ID와 원문 버전을 서버가 대조하고, 실제 인용한 자료만 화면에 표시</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">잘못된 인용은 한 번 교정을 요청하고 실패하면 유보. 사실, 가정, 미확인 정보를 나누어 저장</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">포켓몬 메타와 문서 청크의 컬렉션 분리, 선택 메타 우선 포함과 적용 범위 및 활성 색인 버전 확인</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">중복 근거 제거와 유사도 검색 또는 MMR 선택으로 관련도와 근거 다양성 조정</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">주장별 근거 ID와 원문 버전을 서버에서 대조, 잘못된 인용은 한 번 교정하고 다시 실패하면 답변 유보</li>
 </ul></section>
 <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4><ul class="m-0 list-disc pl-[1.25em]">
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">기본 1,025종과 별도 폼 326개로 총 1,351개 도감 항목 구성. 질문에서 사용한 근거는 원문 링크로 확인</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">전투와 3마리 선출 답변은 추천 행동, 이유, 조건부 대안 순으로 구성하고 한계와 인용 출처는 마지막에 표시</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">검색 범위 필터, 중복 제거, 허위 인용 거부, 교정 실패 후 유보, MMR 적용 시 선택 메타 보존을 회귀 테스트로 검증</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">인용 ID의 유효성 검사와 답변 내용의 정확성 검증을 구분. 현행 게임 적격성과 미검증 전투 정보는 확정하지 않도록 처리</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">검색 범위 필터, 허위 인용 거부, 교정 실패 후 유보, MMR 검색의 선택 메타 보존 검증</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">실제 인용한 자료만 원문 링크로 제공, 전투와 선출 답변의 한계 및 출처를 본문 마지막에 표시</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">인용 ID 검증과 답변 내용의 정확성 구분, 현행 게임 적격성과 미검증 전투 정보의 확정 방지</li>
 </ul></section>
 </div></article>
-<article class="pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">2. 반복 수집과 불필요한 생성 제거로 응답 지연 개선</h3><div class="grid gap-4">
+<article class="pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">2. 질문별 실행 경로 분리로 불필요한 모델 호출 제거</h3><div class="grid gap-4">
 <section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2"><button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/02-latency-handdrawn.png?v=15c0537a40c7" aria-label="질문 유형에 따라 준비된 근거와 새 자료 수집을 나누는 흐름 크게 보기"><img src="assets/poketact/02-latency-handdrawn.png?v=15c0537a40c7" alt="질문 유형에 따라 준비된 근거와 새 자료 수집을 나누는 흐름" width="1909" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
 <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4><ul class="m-0 list-disc pl-[1.25em]">
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">자료가 준비된 간단한 대면 질문에서도 검색어 생성, 후보 선별, 외부 수집을 반복해 응답 지연 발생</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">선출 계산에서는 최종 답변에 사용하지 않는 모델 문장을 생성한 뒤 버리는 처리 확인</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">자료가 준비된 대면 질문에서도 검색어 생성, 후보 선별, 외부 수집 반복으로 응답 지연 발생</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">선출 계산 후 화면에 사용하지 않는 모델 문장을 생성했다가 폐기하는 중복 처리 확인</li>
 </ul></section>
 <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4><ul class="m-0 list-disc pl-[1.25em]">
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">계산 자료가 준비된 단순 대면은 기존 RAG 색인을 검색. 일반 전략, 최신 자료, 명시적 조사 요청은 외부 수집 경로 유지</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">선출 결과는 근거 검색 후 계산한 내용의 인용을 직접 검증하고 화면에 표시해 불필요한 생성 호출 제거</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">모든 호출의 추론 수준을 낮춘 실험에서 선봉 역할 혼동을 확인해 상태 추출은 medium으로 유지하고 나머지 호출만 조정</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">계산 자료가 준비된 단순 대면은 기존 RAG 색인 검색, 일반 전략과 최신 자료 조사에는 외부 수집 경로 유지</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">선출 결과는 근거 검색과 인용 검증 후 직접 출력, 사용하지 않는 답변 생성 호출 제거</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">모든 호출의 추론 수준을 낮춘 실험에서 선봉 역할 혼동 확인, 상태 추출은 medium 유지</li>
 </ul></section>
 <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4><ul class="m-0 list-disc pl-[1.25em]">
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">로컬의 같은 3개 합성 대화 동시 검증에서 응답 시간 중앙값 62.8초 → 20.4초로 약 67.5% 감소</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">단독 측정에서 대면 46.96초 → 15.26초, 선출 18.81초 → 10.61초로 감소</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">최종 실제 모델 질문 17건에서 선봉, 대화 상태, 타입 계산, 선출 후보 일치를 재확인하고, 단순 대면의 외부 수집 생략과 조사 요청의 수집 유지를 회귀 테스트로 검증</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">준비 자료와 검색 캐시를 사용한 당시 로컬 측정값으로, 전체 질문이나 운영 트래픽의 응답 시간을 보장하지는 않음</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동일한 로컬 합성 대화 3개 동시 검증에서 응답 시간 중앙값 62.8초 → 20.4초로 약 67.5% 감소</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">실제 모델 질문 17건의 선봉, 대화 상태, 타입 계산, 선출 후보 일치 재확인</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">준비 자료와 검색 캐시를 사용한 당시 로컬 측정값으로 한정, 운영 전체 응답 속도는 미검증</li>
 </ul></section>
 </div></article>
-<article class="pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">3. 동시 요청과 재시도에 대한 모델 사용량 제한</h3><div class="grid gap-4">
+<article class="pt-8 pb-6 border-t border-line"><h3 class="text-[clamp(20px,2vw,26px)] font-[720] text-ink tracking-[-.04em] leading-[1.45] mb-7">3. 동시 요청과 중복 정산에도 유지되는 모델 사용량 제한</h3><div class="grid gap-4">
 <section class="min-w-0 rounded-2xl print:break-inside-avoid p-0 bg-transparent mb-2"><button class="focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 [-webkit-tap-highlight-color:transparent] group relative block w-full overflow-hidden border border-line rounded-2xl bg-white pt-4 px-4 pb-[42px] cursor-zoom-in text-muted transition-[border-color,box-shadow] duration-[180ms] hover:border-[#b4cef3] hover:shadow-[0_8px_24px_rgb(35_42_52/0.06)] small:pt-2 small:px-2 small:pb-9 small:rounded-xl print:p-0 print:border-0" type="button" data-image="assets/poketact/03-budget-handdrawn.png?v=00098ab3e6dd" aria-label="요청 접수와 모델 호출 전 예약으로 사용량을 제한하는 흐름 크게 보기"><img src="assets/poketact/03-budget-handdrawn.png?v=00098ab3e6dd" alt="요청 접수와 모델 호출 전 예약으로 사용량을 제한하는 흐름" width="1908" height="824" loading="lazy" class="max-w-full block w-full h-auto scale-[1.09] print:scale-100"><span class="absolute right-4 bottom-2.5 text-[12px] font-[550] group-hover:text-accent-hover small:right-3 small:bottom-2 print:hidden">그림 크게 보기<span aria-hidden="true">↗</span></span></button></section>
 <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">문제</h4><ul class="m-0 list-disc pl-[1.25em]">
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">질문 한 건에도 검색어 생성, 자료 선별, 답변 생성, 재시도로 여러 유료 호출이 발생해 요청 횟수 제한만으로 전체 사용량 통제가 어려움</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동시 요청이 같은 잔여 예산을 읽거나 서버 재시작으로 집계가 초기화되면 설정한 한도를 초과할 가능성</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">질문 한 건에 검색어 생성, 자료 선별, 답변 생성과 재시도까지 발생해 요청 횟수만으로 유료 사용량 통제 곤란</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동시 요청의 잔여 예산 중복 사용과 정산 재시도의 중복 환급 가능, 사용량을 확인하지 못한 호출의 처리 기준 필요</li>
 </ul></section>
 <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">해결</h4><ul class="m-0 list-disc pl-[1.25em]">
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">세션과 IP별 속도, 일일 접수량, 동시 작업 수를 함께 제한하고, IP와 세션은 HMAC 식별자로 집계</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">입력, 최대 출력, 재시도에 필요한 사용량을 호출 전에 예약하고 PostgreSQL 트랜잭션 잠금 안에서 한도 검사와 차감 수행</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">공급자가 반환한 사용량을 검증해 실제 토큰으로 정산하고 남은 예약량 반환. 사용량을 확인할 수 없는 호출은 예약을 유지하고 DB 장애 시 모델 호출 차단</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">요청 ID가 같은 재전송은 기존 작업을 반환하고, 전체 한도 도달 후에도 모델을 사용하지 않는 기본 도감 조회 제공</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">세션과 IP별 접수량 및 동시 작업 제한, 모델 호출 전 PostgreSQL 트랜잭션 잠금으로 예산 검사와 토큰 예약 처리</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">공급자 토큰의 형식과 합계 검증 후 원래 예약일에 한 번만 정산, 다른 요청의 예약량과 다음 날 예산 유지</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">사용량 누락이나 오류 시 예약 유지, DB 정산 실패를 모델 재시도에서 분리해 추가 유료 호출 차단</li>
 </ul></section>
 <section class="min-w-0 px-7 py-6 rounded-2xl bg-surface small:p-5 print:break-inside-avoid"><h4 class="text-[17px] font-[750] text-ink mb-3.5">결과</h4><ul class="m-0 list-disc pl-[1.25em]">
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">동시 예약 테스트에서 예산 100에 25씩 예약한 12개 요청 중 4개만 허용하고, 재시작 후 추가 예약 차단을 검증</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">한도 직전 전체 호출 예약 실패 시 공급자에 요청이 전달되지 않는지, 세션 재발급, 만료, DB 장애에서도 제한이 유지되는지 회귀 테스트로 확인</li>
-<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">공급자 보고 토큰으로 정산하고 불명확한 호출은 예약량을 유지. 토큰 예산과 실제 달러 청구액을 구분해 관리</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">예산 100에 25씩 예약하는 동시 요청 12개 중 4개만 허용, 재시작 후 추가 예약 차단 검증</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">같은 예약의 동시 정산 4회에도 한 번만 반영, 잘못된 사용량의 환급 차단과 날짜 경계 검증</li>
+<li class="my-[9px] text-muted leading-[1.8] marker:text-muted marker:text-[.8em] first:mt-0 last:mb-0">공급자 보고 토큰과 실제 청구액 구분, 예산 소진 후에도 모델을 사용하지 않는 기본 도감 조회 제공</li>
 </ul></section>
 </div></article>
 </section>
